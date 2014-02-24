@@ -1,0 +1,138 @@
+/*
+Theme Name: Awesome App
+Theme URI: http://awesomeapp.azyrusthemes.com/
+Author: SenorThemes
+Author URI: http://www.senorthemes.com
+Description: Awesome App Wordpress Theme is a great one page theme to showcase your app or any other product or service you provide.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: awesomeapp
+*/
+
+/* =Notes
+--------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 24;
+
+---------- Examples
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Vertical spacing
+
+Vertical spacing between most elements should use 24px or 48px
+to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 24px 0;
+	margin: 1.714285714rem 0; ( 24 / $rembase )
+}
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+.wp-caption {
+	max-width: 100%; /* Keep wide captions from overflowing their container. */
+	padding: 4px;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {
+	font-style: italic;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+	color: #757575;
+}
+article.sticky .featured-post {
+	border-top: 4px double #ededed;
+	border-bottom: 4px double #ededed;
+	color: #757575;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	line-height: 3.692307692;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+	text-align: center;
+}
+.comments-area li.bypostauthor cite span {
+	position: absolute;
+	margin-left: 5px;
+	margin-left: 0.357142857rem;
+	padding: 2px 5px;
+	padding: 0.142857143rem 0.357142857rem;
+	font-size: 10px;
+	font-size: 0.714285714rem;
+}
+li.bypostauthor cite span {
+	padding: 6px 10px;
+	padding: 0.428571429rem 0.714285714rem;
+	font-size: 11px;
+	font-size: 0.785714286rem;
+	line-height: 1.428571429;
+	font-weight: normal;
+	color: #7c7c7c;
+	background-color: #e6e6e6;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -ms-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -webkit-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
+	border: 1px solid #d2d2d2;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(64, 64, 64, 0.1);
+}
+li.bypostauthor cite span {
+	color: #fff;
+	background-color: #21759b;
+	background-image: none;
+	border: 1px solid #1f6f93;
+	border-radius: 2px;
+	box-shadow: none;
+	padding: 0;
+}
+/* Images */
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft {
+	margin: 12px 24px 12px 0;
+	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+}
+img.alignright {
+	margin: 12px 0 12px 24px;
+	margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
+}
+img.aligncenter {
+	margin-top: 12px;
+	margin-top: 0.857142857rem;
+	margin-bottom: 12px;
+	margin-bottom: 0.857142857rem;
+}

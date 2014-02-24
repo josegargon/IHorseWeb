@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/responsive.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../css/shortcodes.css" />
+<style type="text/css">
+
+		
+</style>
+<script type="text/javascript">
+	
+	jQuery(function($){
+		$('#frm_create').submit(function(e){
+     		e.preventDefault();
+     		append_grid($('#quantity').val());
+		})
+
+     	$('#quantity').bind('keyup change',function(){
+				append_grid($(this).val());
+
+     	})
+
+     	$('#col-class').bind('change',function(){
+	     	$('#demo_grid').attr('class','accordion '+ $(this).find('select').val());
+ 	    });
+
+     	$('#btn_insert').click(function(){
+
+     		  /**
+              * Shortcode markup
+              * -----------------------
+              *      [collapse id="#"]
+              *         [citem title="" id="" parent=""]
+              *         [/citem]
+              *     [/collapse]
+              *  -----------------------
+              */
+                    var uID =  Math.floor((Math.random()*100)+1);
+                    var style = $('input:text[name=collapse-style]').val();
+                    
+                    var shortcode = '[collapse id="collapse_'+uID+'" class="'+style+'"]<br class="nc"/>';
+                     $('#demo_grid .accordion-group').each(function(){
+                            var id = Math.floor((Math.random()*100)+1);
+                            var title = $(this).find('input').val();
+                            var content = $(this).find('textarea').val();
+                            shortcode+= '[citem title="'+title+'" id="citem_'+id+'" parent="collapse_'+uID+'"]<br class="nc"/>';
+                            shortcode += content+'<br class="nc"/>';
+                            shortcode += '[/citem]<br class="nc"/>';
+                        }
+                       ) 
+
+                    shortcode+= '[/collapse]';
+					parent.tinymce.activeEditor.execCommand('mceInsertContent',false,shortcode);
+					parent.tb_remove();
+     	})
+
+		$('.accordion-heading input').live('focus',function(){
+			this.select();
+			return false;
+		})
+
+	});
+
+	function append_grid(cols){
+     	if(isNaN(cols)||cols>99) return;
+     	$('#demo_grid').empty();
+     	$('#col-class').fadeIn();
+     	$('#btn_insert').removeClass('hide');
+     	var uID =  Math.floor((Math.random()*100)+1);
+        var style = '';//$menu.find('input[name=style]').val();
+        var num = cols;
+        var item = '';
+        console.log(num)
+            for(i=0;i<num;i++){
+                var id = Math.floor((Math.random()*100)+1);
+                var title = 'Collapsible Group Item '+(i+1);
+                item += '<div class="accordion-group">\
+				             <div class="accordion-heading">\
+				                    <a href="#citem_'+id+'" data-parent="#demo_grid" data-toggle="collapse" class="accordion-toggle">\
+									open/close</a>\
+									<strong style="margin-left:10px">Item '+(i+1)+' Title</strong><br>\
+				                    <input type="text" style="margin-left:10px;" value="'+title+'" />\
+				            </div>\
+				             <div class="accordion-body collapse in" id="citem_'+id+'">\
+		                    <div class="accordion-inner" data-textarea="true" data-editable="true">\
+		                    <strong>Item '+(i+1)+' Content</strong><br>\
+							<textarea style="width: 580px" cols="50" row="15"> Collapsible item '+(i+1)+' content goes here..</textarea>\
+		                    </div>\
+		             </div>\
+		         </div>';
+            }
+			$(item).appendTo('#demo_grid');
+    }
+</script>	
+</head>
+
+<body style="padding:10px">
+<br />
+	<form id="frm_create" style="float:left; width: 49%;">
+		<strong>Number of items</strong><br> 
+		<input placeholder="Input number" required pattern="\b([1-9]|[1-9][0-9])\b" id="quantity" type="number" name="quantity" min="1" max="99">
+	</form>
+	<div id="col-class" style="display:none;float:left; width: 49%; margin-left:1%">
+		<strong>CSS Style Class</strong><br> 
+		<input name="collapse-style" type="text" value="" />
+	</div>
+
+	<div id="demo_grid" class="accordion" style="clear:both">
+
+	</div>
+
+	<button id="btn_insert" class="btn btn-success hide" >Insert shortcode</button>
+</body>
+</html>
