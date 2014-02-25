@@ -13,10 +13,10 @@ function aa_features($params, $content = null){
 		<?php if(($i%3) ===0) echo '<div class="row-fluid features_widget">'; ?>
 		<div class="span4">
 			<div class="row-fluid">
-				<div class="span3 icon_con">
+				<div class="span4 icon_con">
 					<i class="<?php echo get_post_meta( $featureObj->ID, 'features_icon', true); ?>"></i>
 				</div>
-				<div class="span9">
+				<div class="span8">
 					<h5><?php echo $featureObj->post_title; ?></h5>
 					<p><?php echo do_shortcode(str_replace(array("\r\n\r\n", "\n\n"), "<br />", $featureObj->post_content)); ?></p>
 				</div>
