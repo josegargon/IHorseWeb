@@ -120,7 +120,7 @@ function aa_faqs($params, $content = null){
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#faqs_accordion" href="#faq_accord_<?php echo $i; ?>">
 								<?php echo $sqlFaqsAll[$key]->post_title; ?></a>
 						</div>
-						<div id="faq_accord_<?php echo $i; ?>" class="accordion-body collapse<?php echo $i==1 ? ' in' : ''; ?>">
+						<div id="faq_accord_<?php echo $i; ?>" class="accordion-ihorsebody collapse<?php echo $i==1 ? ' in' : ''; ?>">
 							<div class="accordion-inner">
 								<h5><?php echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
 								<p class="marginb_56"><?php echo $sqlFaqsAll[$key]->post_content; ?></p>
