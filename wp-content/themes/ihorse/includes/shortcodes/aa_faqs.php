@@ -57,7 +57,7 @@ function aa_faqs($params, $content = null){
 		</div>
 		<?php else :  ?>
 		<div class="row faqs_list">
-			<div class="span5">
+			<div class="span7">
 				<ul id="faqs_content" class="faqs_content">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $val) : $i1++; ?>
 					<li id="faq_<?php echo $i1; ?>">
@@ -94,7 +94,7 @@ function aa_faqs($params, $content = null){
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div class="span3">
+			<div class="span4">
 				<h5>More FAQs</h5>
 				<ul class="formatted_1" id="faqs_title">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $value) : $i1++; ?>
