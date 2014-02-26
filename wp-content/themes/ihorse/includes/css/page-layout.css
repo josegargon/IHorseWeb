@@ -1991,9 +1991,10 @@ hr {
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
     .theme_col { background-size: none; }
-    figure.fixedratio_h2, figure.fixedratio_h1 {
+   /* figure.fixedratio_h2, figure.fixedratio_h1 {
         padding: 25.538623226484498160798738833421% 0;
     }
+    */
     .faqs_list .formatted_1 i, .jobs_list .formatted_1 i {
         float:left; width: 10px; margin-top: 5px;
     }

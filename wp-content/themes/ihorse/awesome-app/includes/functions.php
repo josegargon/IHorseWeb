@@ -177,10 +177,10 @@
 		}	
 		$email_subscribe = $_POST['email_subscribe'];
 
-		$msgSubject = "Signup for a demo"; // THE SUBJECT FOR THE EMAIL
-		$msgString = "I would like to signup for a demo."; // CONTENT FOR THE EMAIL
+		$msgSubject = "Quiero más información"; // THE SUBJECT FOR THE EMAIL
+		$msgString = "Me gustaría tener más información"; // CONTENT FOR THE EMAIL
 
-		$subject = "Signup for Demo";
+		$subject = "Quiero más información";
 
 		// MESSAGE BODY FOR MAIL SERVER THAT ACCEPTS HTML FORMATTING
 		$messageHTML = "
