@@ -13,8 +13,8 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
 
 $ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null));
 $user_response = json_encode( $ajax_response_user );
-$home_location = 'http://ihorse.web.me';
-$form_location = 'http://ihorse.web.me/?page_id=760';
+$home_location = 'http://www.dentalhorse.com';
+$form_location = 'http://www.dentalhorse.com/formulario';
 }
 ?>
 <script>
