@@ -13,6 +13,7 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
 
 $ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null));
 $user_response = json_encode( $ajax_response_user );
+
 $home_location = 'http://www.dentalhorse.com';
 $form_location = 'http://www.dentalhorse.com/formulario';
 }
@@ -20,7 +21,7 @@ $form_location = 'http://www.dentalhorse.com/formulario';
 <script>
     jQuery(document).ready(function(){
         jQuery.post('http://rest.ihorse.me/app_dev.php/registers', <?php echo $user_response ?>, function(response) {
-            })
+        })
             .done(function(){
                 alert("El usuario se ha creado con éxito.");
                 window.location = <?php echo "'" .$home_location."'"  ?>;
@@ -28,6 +29,7 @@ $form_location = 'http://www.dentalhorse.com/formulario';
             .fail(function(){
                 alert("el email pertenece a otro veterinario");
                 window.history.back();
-            });
+            })
+        ;
     });
 </script>
