@@ -65,20 +65,26 @@ blockquote:before, blockquote:after, q:before, q:after {
 .ta-center {
     text-align: center;
 }
-.color_grey1 {
-    background-color: #FFFFFF !important;
-}
 .color_grey2 {
     background-color: #F1F2F4 !important;
 }
+.color_grey3 {
+    background-color: #A4A4A4 !important;
+}
 .color_blue1 {
-    background-color: #EEF5FD !important;
+    background-color: #4E7FDA !important;
 }
 .color_blue_black {
     background-color: #082244 !important;
 }
 .color_grey_black {
-    background-color: #636466 !important;
+    background-color: #585858 !important;
+}
+.color_white {
+    background-color: #FFFFFF !important;
+}
+.c_green {
+    color: green !important;
 }
 .c_black {
     color: #000000 !important;
@@ -89,8 +95,21 @@ blockquote:before, blockquote:after, q:before, q:after {
 .fs_20 {
     font-size: 20px;
 }
+.fs_40 {
+    font-size: 40px;
+}
 .fs_30 {
     font-size: 30px;
+}
+.fs_16 {
+    font-size: 16px;
+}
+.mr30-n {
+    margin-right: -30px;
+}
+.table_border_grey {
+    border: 1px solid #A4A4A4 !important;
+;
 }
 table {
     border-collapse: collapse;
