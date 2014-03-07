@@ -109,8 +109,12 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 .table_border_grey {
     border: 1px solid #A4A4A4 !important;
-;
 }
+.section_step span{
+    font-size: 20px;
+    color: black;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
