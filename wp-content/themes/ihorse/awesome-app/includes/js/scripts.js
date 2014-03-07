@@ -101,7 +101,7 @@ jQuery(document).ready(function(jQuery) {
 				url: ajaxObj.ajaxurl,
 				success: function(data) {
 					if(data.success) {
-						alert("Request sent!");
+						alert("Petición realizada");
 					}
 				}
 			});

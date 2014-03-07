@@ -44,6 +44,73 @@ blockquote:before, blockquote:after, q:before, q:after {
     content: '';
     content: none;
 }
+.ml-0 {
+    margin-left: 0px !important;
+}
+.mr-2percentaje {
+    margin-left: 2.5641% !important;
+}
+.ml-50 {
+    margin-left: 50px;
+}
+.mr-50 {
+    margin-right: 50px;
+}
+.mr-125 {
+    margin-right: 125px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.ta-center {
+    text-align: center;
+}
+.color_grey2 {
+    background-color: #F1F2F4 !important;
+}
+.color_grey3 {
+    background-color: #A4A4A4 !important;
+}
+.color_blue1 {
+    background-color: #4E7FDA !important;
+}
+.color_blue_black {
+    background-color: #082244 !important;
+}
+.color_grey_black {
+    background-color: #585858 !important;
+}
+.color_white {
+    background-color: #FFFFFF !important;
+}
+.c_green {
+    color: green !important;
+}
+.c_black {
+    color: #000000 !important;
+}
+.c_white {
+    color: #FFFFFF !important;
+}
+.fs_20 {
+    font-size: 20px;
+}
+.fs_40 {
+    font-size: 40px;
+}
+.fs_30 {
+    font-size: 30px;
+}
+.fs_16 {
+    font-size: 16px;
+}
+.mr30-n {
+    margin-right: -30px;
+}
+.table_border_grey {
+    border: 1px solid #A4A4A4 !important;
+;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -883,7 +950,7 @@ a#youtube i:hover {
     cursor: pointer;
 }
 .features_widget i {
-    font-size: 6rem;
+    font-size: 8rem;
 }
 .features_widget h5, .heading_1 h5 {
     font-weight: 600;
@@ -1178,7 +1245,7 @@ p {
 /* Styled Tables and Boxes */
 /*-----------------------------------*/
 table {
-    border: 1px solid #5786DC;
+    border: 1px solid #EEF5FD;
     width: 100%;
 }
 table tr td, table tr th {
@@ -1197,7 +1264,7 @@ table tr th {
     color: #fff;
 }
 table tbody tr:nth-child(odd) td {
-    background: #f8f8f8;
+    background: #EEF5FD;
 }
 .styled_table { margin: 20px; }
 .styled_table table,
@@ -1632,7 +1699,7 @@ hr {
     .row > .span1 {
         width: 70px;
     }
-    .row-fluid > #previous {
+    .row-fluid > #previous {980px
         float: left !important;
         width: auto;
     }
@@ -1943,9 +2010,10 @@ hr {
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
     .theme_col { background-size: none; }
-    figure.fixedratio_h2, figure.fixedratio_h1 {
+   /* figure.fixedratio_h2, figure.fixedratio_h1 {
         padding: 25.538623226484498160798738833421% 0;
     }
+    */
     .faqs_list .formatted_1 i, .jobs_list .formatted_1 i {
         float:left; width: 10px; margin-top: 5px;
     }

@@ -29,7 +29,7 @@
 <!--[if IE 7]>
  	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/css/font-awesome-ie7.min.css">
 <![endif]-->
-<!--[if lt IE 9]>
+<!--[if lt IE 9]>table tbody tr:nth-child(
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts/emailpage.js"></script>

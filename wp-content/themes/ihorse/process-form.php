@@ -11,19 +11,16 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
     echo "fallo en el formulario";
 } else {
 
-$ajax_response = array('clinic' => array('name' => $clinic));
-
-$ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => '1'));
-$clinic_response = json_encode( $ajax_response );
+$ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null));
 $user_response = json_encode( $ajax_response_user );
 $home_location = 'http://ihorse.web.me';
-$form_location = 'http://ihorse.web.me/?page_id=760';
+$form_location = 'http://ihorse.web.me/formulario';
 }
 ?>
 <script>
     jQuery(document).ready(function(){
-        jQuery.post('http://rest.ihorse.me/app_dev.php/veterinaries?access_token=MmY3OGZiY2M2MzdkZmRmMmZmZDcwYWFkZTgxMTIxNWM3OTE5OTIzN2JlZmI4NDdkMmE4Yjk3NzhjZWY5NjgyOA', <?php echo $user_response ?>, function(response) {
-            })
+        jQuery.post('http://rest.ihorse.me/app_dev.php/registers', <?php echo $user_response ?>, function(response) {
+        })
             .done(function(){
                 alert("El usuario se ha creado con éxito.");
                 window.location = <?php echo "'" .$home_location."'"  ?>;
@@ -31,6 +28,7 @@ $form_location = 'http://ihorse.web.me/?page_id=760';
             .fail(function(){
                 alert("el email pertenece a otro veterinario");
                 window.history.back();
-            });
+            })
+        ;
     });
 </script>

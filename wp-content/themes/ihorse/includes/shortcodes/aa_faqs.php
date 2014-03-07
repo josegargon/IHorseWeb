@@ -57,7 +57,7 @@ function aa_faqs($params, $content = null){
 		</div>
 		<?php else :  ?>
 		<div class="row faqs_list">
-			<div class="span5">
+			<div class="span7">
 				<ul id="faqs_content" class="faqs_content">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $val) : $i1++; ?>
 					<li id="faq_<?php echo $i1; ?>">
@@ -94,14 +94,14 @@ function aa_faqs($params, $content = null){
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div class="span3">
+			<div class="span4">
 				<h5>More FAQs</h5>
 				<ul class="formatted_1" id="faqs_title">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $value) : $i1++; ?>
 					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo $sqlFaqs[$key]->post_title; ?></span></a></li>
 					<?php endforeach; ?>
 				</ul>
-				<a href="#faqs_all" role="button" class="btn btn-inverse btn-large" data-toggle="modal">VIEW ALL</a>
+				<a href="#faqs_all" role="button" class="btn btn-inverse btn-large" data-toggle="modal">Ver todas</a>
 			</div>
 			<div class="span1">&nbsp;</div>
 		</div>
@@ -120,7 +120,7 @@ function aa_faqs($params, $content = null){
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#faqs_accordion" href="#faq_accord_<?php echo $i; ?>">
 								<?php echo $sqlFaqsAll[$key]->post_title; ?></a>
 						</div>
-						<div id="faq_accord_<?php echo $i; ?>" class="accordion-body collapse<?php echo $i==1 ? ' in' : ''; ?>">
+						<div id="faq_accord_<?php echo $i; ?>" class="accordion-ihorsebody collapse<?php echo $i==1 ? ' in' : ''; ?>">
 							<div class="accordion-inner">
 								<h5><?php echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
 								<p class="marginb_56"><?php echo $sqlFaqsAll[$key]->post_content; ?></p>

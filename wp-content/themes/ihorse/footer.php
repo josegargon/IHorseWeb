@@ -20,6 +20,7 @@
 				</div>
 				<div class="copyright">
 					Copyrights <?php echo date("Y"); ?>, <a href="<?php echo home_url(); ?>"><?php echo get_home_url(); ?></a>
+                    <a href="<?php echo home_url() . '/terminos-y-condiciones/'; ?>" style="float:right;">Términos y condiciones</a>
 				</div>
 			</div>
 		</div>
