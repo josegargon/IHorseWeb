@@ -134,6 +134,11 @@ blockquote:before, blockquote:after, q:before, q:after {
     position: relative;
     top: 18px;
 }
+.section_step span{
+    font-size: 20px;
+    color: black;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
