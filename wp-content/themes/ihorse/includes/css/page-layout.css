@@ -53,6 +53,9 @@ blockquote:before, blockquote:after, q:before, q:after {
 .ml-50 {
     margin-left: 50px;
 }
+.ml-20 {
+    margin-left: 20px;
+}
 .mr-50 {
     margin-right: 50px;
 }
@@ -64,6 +67,12 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 .ta-center {
     text-align: center;
+}
+.ta-left {
+    text-align: left;
+}
+.ta-right {
+    text-align: right;
 }
 .color_grey2 {
     background-color: #F1F2F4 !important;
@@ -83,6 +92,10 @@ blockquote:before, blockquote:after, q:before, q:after {
 .color_white {
     background-color: #FFFFFF !important;
 }
+.color_orange {
+    background-color: #FF8000 !important;
+    background-image: linear-gradient(to bottom, #FF8000, #FF8000) !important;
+}
 .c_green {
     color: green !important;
 }
@@ -95,6 +108,9 @@ blockquote:before, blockquote:after, q:before, q:after {
 .fs_20 {
     font-size: 20px;
 }
+.fs_26 {
+    font-size: 26px;
+}
 .fs_40 {
     font-size: 40px;
 }
@@ -104,11 +120,19 @@ blockquote:before, blockquote:after, q:before, q:after {
 .fs_16 {
     font-size: 16px;
 }
-.mr30-n {
-    margin-right: -30px;
+.mr15-n {
+    margin-right: -15px;
 }
 .table_border_grey {
     border: 1px solid #A4A4A4 !important;
+}
+.big_button {
+    width: 70%;
+    height: auto;
+}
+.btn-center {
+    position: relative;
+    top: 18px;
 }
 .section_step span{
     font-size: 20px;
@@ -1757,6 +1781,9 @@ hr {
     };
 }
 @media (min-width: 768px) and (max-width: 979px) {
+    .table_tablet {
+        height: 130px;
+    }
     .row-fluid .icon_con i, .icon-4x {
         font-size: 4rem !important;
     }
