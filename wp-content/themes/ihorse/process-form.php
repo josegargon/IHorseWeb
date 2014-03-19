@@ -2,20 +2,21 @@
 <?php
 //get the form elements and store them in variables
 
-$email=$_POST["email"];
-$name=$_POST["name"];
-$last_name=$_POST["last_name"];
-$password=$_POST["password"];
-$clinic=$_POST["email"];
+$email = $_POST["email"];
+$name = $_POST["name"];
+$last_name = $_POST["last_name"];
+$password = $_POST["password"];
+$clinic = $_POST["email"];
+$type = $_POST["type"];
 if ($email == null || $_POST["password"] == null || $_POST["re_password"] == null || $_POST["password"] != $_POST["re_password"]) {
     echo "fallo en el formulario";
 } else {
 
-$ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null));
+$ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null), 'type' => $type);
 $user_response = json_encode( $ajax_response_user );
 
 $home_location = 'http://www.dentalhorse.com';
-$form_location = 'http://www.dentalhorse.com/formulario';
+$form_location = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
 }
 ?>
 <script>
