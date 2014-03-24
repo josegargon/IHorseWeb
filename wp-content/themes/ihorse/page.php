@@ -13,7 +13,7 @@
 
 ?>
 <?php
-get_header(); ?>
+get_header(''); ?>
 	<div class="container blog_post">
 		<div class="row-fluid ">
 			<div id="primary" class="site-content container">

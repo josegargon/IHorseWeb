@@ -1,5 +1,5 @@
 <?php
-function awesomeapp_navbar() {
+function awesomeapp_navbar($onePage = null) {
 	$navItemsArr = ot_get_option('nav_items');
 	$home_arr = array();
 	if($navItemsArr && !(is_string($navItemsArr))) {
@@ -64,10 +64,11 @@ function awesomeapp_navbar() {
 									 ?>
 										<li class="top_section current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo $logo; ?>" alt="logo" /></a></li>
 
-								<?php } ?>
+								<?php }
+                                if (!$onePage) {?>
 								<?php if($pages_arr && !(is_string($pages_arr))) { ?>
-									<?php foreach($pages_arr as $navItemMenu) : 
-										
+									<?php foreach($pages_arr as $navItemMenu) :
+
 										$pageObj = get_page( $navItemMenu['page_select'] );
 										$navItemObj = json_decode(json_encode(unserialize(serialize($navItemMenu))));
 										if(is_page_template('page-one-page.php')) {
@@ -85,22 +86,23 @@ function awesomeapp_navbar() {
 												} else {
 													$page_url = get_permalink($navItemMenu['page_select']);
 													$page_external_class = "external_url";
+                                                    $page_url = site_url('/');
 												}
 											}
 										} else if($navItemMenu['link_type'] === 'page_external') {
-											$page_url = get_permalink($navItemMenu['page_select']);
-											$page_external_class = "external_url";
-										} else if($navItemMenu['link_type'] === 'post_external') {
-											//$pageObj = get_post($navItemMenu['post_select']);
-											$page_url = get_permalink($navItemMenu['post_select']);
-											$page_external_class = "external_url";
-										} else if($navItemMenu['link_type'] === 'category_external') {
-											//$pageObj = get_post($navItemMenu['category_select']);
-											$page_url = get_category_link($navItemMenu['category_select']);
-											$page_external_class = "external_url";
-										} else if($navItemMenu['link_type'] === 'external') {
-											$page_url = $navItemMenu['custom_link'];
-											$page_external_class = "external_url";
+                                            $page_url = get_permalink($navItemMenu['page_select']);
+                                            $page_external_class = "external_url";
+                                        } else if($navItemMenu['link_type'] === 'post_external') {
+                                            //$pageObj = get_post($navItemMenu['post_select']);
+                                            $page_url = get_permalink($navItemMenu['post_select']);
+                                            $page_external_class = "external_url";
+                                        } else if($navItemMenu['link_type'] === 'category_external') {
+                                            //$pageObj = get_post($navItemMenu['category_select']);
+                                            $page_url = get_category_link($navItemMenu['category_select']);
+                                            $page_external_class = "external_url";
+                                        } else if($navItemMenu['link_type'] === 'external') {
+                                            $page_url = $navItemMenu['custom_link'];
+                                            $page_external_class = "external_url";
 										}
 									?>
 									<?php if($navItemObj->hide_nav_item === 'no') { ?>
@@ -111,7 +113,8 @@ function awesomeapp_navbar() {
 										<?php endif; ?>
 									<?php } ?>
 									<?php endforeach; ?>
-								<?php } ?>
+								<?php }
+                                } ?>
 								<?php
 									$enable_purchase_button = ot_get_option('enable_purchase_button');
 									$purchase_link = ot_get_option('purchase_link');
