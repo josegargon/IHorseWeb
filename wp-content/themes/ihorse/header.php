@@ -66,6 +66,6 @@ wp_enqueue_script('jquery');
 			if(!is_home() && is_front_page()) {
 				top_section();
 			}
-			awesomeapp_navbar(true);
+			awesomeapp_navbar();
 		?>
 		<!-- END NAVIGATION SECTION -->
