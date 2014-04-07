@@ -17,6 +17,7 @@ function awesomeapp_navbar($onePage = null) {
 			}
 		}
 	}
+    global $wpdb;
 ?>
 <?php // adding the navbar menu .. this will stick on the top when it reaches the top=0. ?>
 <section class="navbar_menu_fixed" id="navbar_menu_fixed" style="z-index: 200;">
@@ -116,10 +117,16 @@ function awesomeapp_navbar($onePage = null) {
                                             }
                                         ?>
                                         <?php if($navItemObj->hide_nav_item === 'no') { ?>
+                                                <?php global $wpdb;
+                                                    $sqlFeatures = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE ID={$navItemMenu['page_select']}");
+                                                    ob_start();
+                                                ?>
                                             <?php if($navItemMenu['brick_type'] === 'slogan') : ?>
                                                 <li class="current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
                                             <?php else : ?>
-                                                <li class="<?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php echo $navItemMenu['title']; ?></a></li>
+                                                <li class="<?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
+                                                            echo qtrans_use($var_idiom, $featureObj->post_title,false);
+                                                        } ?></a></li>
                                             <?php endif; ?>
                                         <?php } ?>
                                         <?php endforeach; ?>
