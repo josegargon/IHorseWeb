@@ -101,7 +101,7 @@ function aa_faqs($params, $content = null){
 					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo $sqlFaqs[$key]->post_title; ?></span></a></li>
 					<?php endforeach; ?>
 				</ul>
-				<a href="#faqs_all" role="button" class="btn btn-inverse btn-large" data-toggle="modal">Ver todas</a>
+				<a href="#faqs_all" role="button" class="btn btn-info btn-large" data-toggle="modal">Ver todas</a>
 			</div>
 			<div class="span1">&nbsp;</div>
 		</div>

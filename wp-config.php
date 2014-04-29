@@ -19,10 +19,10 @@
 define('DB_NAME', 'ihorseweb');
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', 'newzaarly');
+define('DB_USER', 'root');
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'newzaarly');
+define('DB_PASSWORD', 'iventia');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
 define('DB_HOST', 'localhost');

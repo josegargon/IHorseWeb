@@ -36,6 +36,7 @@
 wp_enqueue_script('jquery');
 <![endif]-->
 <?php wp_head(); ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/css/dentalhorse-custom.css">
 </head>
 <body <?php body_class(); ?>>
 	<div id="fb-root"></div>

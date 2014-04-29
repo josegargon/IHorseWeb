@@ -136,3 +136,11 @@ img.aligncenter {
 	margin-bottom: 12px;
 	margin-bottom: 0.857142857rem;
 }
+
+.icon {
+	font-size: 20px;
+}
+
+.navbar-inverse .btn-navbar {
+	background-color: red !important;
+}
