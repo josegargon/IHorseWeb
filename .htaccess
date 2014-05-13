@@ -6,3 +6,24 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+Redirect 301 /2013/07/ http://www.dentalhorse.com
+Redirect 301 /author/awesomeapp_admin/ http://www.dentalhorse.com
+Redirect 301 /tag/iphone/ http://www.dentalhorse.com
+Redirect 301 /tag/mobile/ http://www.dentalhorse.com
+Redirect 301 /category/announcements/ http://www.dentalhorse.com
+Redirect 301 /tag/america/ http://www.dentalhorse.com
+Redirect 301 /tag/ipad/ http://www.dentalhorse.com
+Redirect 301 /category/uncategorized/ http://www.dentalhorse.com
+Redirect 301 /tag/twitter/ http://www.dentalhorse.com
+Redirect 301 /tag/reporter/ http://www.dentalhorse.com
+Redirect 301 /2014/02/ http://www.dentalhorse.com
+Redirect 301 /hello-world/ http://www.dentalhorse.com
+Redirect 301 /author/admin/ http://www.dentalhorse.com
+Redirect 301 /category/mobile-apps/ http://www.dentalhorse.com
+Redirect 301 /whats-included/ http://www.dentalhorse.com
+Redirect 301 /category/company-news/ http://www.dentalhorse.com
+Redirect 301 /tag/mobile-app/ http://www.dentalhorse.com
+Redirect 301 /hello-world-2/ http://www.dentalhorse.com
+Redirect 301 /tag/awesome-app/ http://www.dentalhorse.com
+Redirect 301 /get-a-free-mobile-blog/ http://www.dentalhorse.com
+Redirect 301 /nam-liber-tempor-soluta-nobis-eleifend-option/ http://www.dentalhorse.com

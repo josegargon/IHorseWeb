@@ -540,10 +540,10 @@ figure.fixedratio_h2 {
     background-repeat: repeat-y;
 }
 .headerbg_1_themecol_mobile {
-    height: auto !important;
+    height: auto;
 }
 .headerbg_2_themecol_mobile {
-    height: auto !important;
+    height: auto;
 }
 .headerbg_1_themecol_mobile .hover_overlay, .headerbg_2_themecol_mobile .hover_overlay {
     background-attachment: inherit !important;
@@ -1826,10 +1826,10 @@ hr {
     }
     .f_right { float: none !important; display: block; margin-top: 15px !important; }
     .headerbg_1 .theme_col {
-        height: auto !important;
+        height: auto;
     }
     .headerbg_2 .theme_col {
-        height: auto !important;
+        height: auto;
     }
     .row-fluid [class*="span"], .row-fluid [class^="span"] {
         text-align: center !important;

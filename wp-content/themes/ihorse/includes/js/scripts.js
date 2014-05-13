@@ -427,4 +427,21 @@ jQuery(window).load(function() {
 		});
 		$('.page_content h3').css({ 'height': t+'px' });
 	});
+
+	if ( /iPad/i.test(navigator.userAgent) ) { 
+		jQuery("html").addClass("tablet");
+	} else if ( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) { 
+		jQuery("html").addClass("mobile");
+	} else {
+		jQuery("html").addClass("desktop");
+	}
+
+    $('.headerbg_1').children('div').css({'height' : $(window).height() + 'px'});
+    $('.headerbg_2').each(function() {
+    	$(this).children('div').css({'height' : $(window).height() + 'px'});
+    });
+    $(window).resize(function() {
+        $(".headerbg_1_themecol_mobile").height($(window).height());
+        $(".headerbg_2_themecol_mobile").height($(window).height());
+    });
 });
