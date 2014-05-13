@@ -1047,7 +1047,7 @@ header label.error { color: #FFF; }
 .wrapper_content .heading_1 .features_widget > [class*="span"]:last-child {
     margin-bottom: 0;
 }
-header .abs_heading_text h2 { margin-bottom: 5rem; }
+header .abs_heading_text h2 { margin-bottom: 3rem; }
 .btn [class^="icon-"], .btn [class*="icon-"] {
     color: #FFF;
 }
