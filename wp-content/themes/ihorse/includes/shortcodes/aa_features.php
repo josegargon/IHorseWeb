@@ -9,6 +9,7 @@ function aa_features($params, $content = null){
 	$sqlFeatures = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE post_type='features' AND post_status='publish'");
 	?>
 		<?php ob_start(); ?>
+        <?php //$var_idiom = qtrans_getLanguage(); ?>
 		<?php $i=0; foreach($sqlFeatures as $featureObj) : ?>
 		<?php if(($i%3) ===0) echo '<div class="row-fluid features_widget">'; ?>
 		<div class="span4">
@@ -17,8 +18,10 @@ function aa_features($params, $content = null){
 					<i class="<?php echo get_post_meta( $featureObj->ID, 'features_icon', true); ?>"></i>
 				</div>
 				<div class="span8">
-					<h5><?php echo $featureObj->post_title; ?></h5>
-					<p><?php echo do_shortcode(str_replace(array("\r\n\r\n", "\n\n"), "<br />", $featureObj->post_content)); ?></p>
+					<h5><?php //echo qtrans_use($var_idiom, $featureObj->post_title,false);
+								echo $featureObj->post_title; ?></h5>
+					<p><?php //echo do_shortcode(str_replace(array("\r\n\r\n", "\n\n"), "<br />", qtrans_use($var_idiom, $featureObj->post_content,false)));
+								echo do_shortcode(str_replace(array("\r\n\r\n", "\n\n"), "<br />", $featureObj->post_content)); ?></p>
 				</div>
 			</div><?php // echo str_replace(array("\r\n\r\n", "\n\n"), "<br />", $sqlJobs[$key]->post_content); ?>
 		</div>
