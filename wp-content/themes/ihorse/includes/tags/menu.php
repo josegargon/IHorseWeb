@@ -158,8 +158,8 @@ function awesomeapp_navbar($onePage = null) {
 
                                 </ul>
                             </div>
-                            <div class="span1">
-                                <!--<ul class="qtrans_language_chooser span1">
+                            <!--<div class="span1">
+                                <ul class="qtrans_language_chooser span1">
                                     <?php if (is_page_template('page-one-page.php')) {
                                             $page_url_en = site_url('/en/');
                                             $page_url_es = site_url('/es/');
@@ -178,8 +178,8 @@ function awesomeapp_navbar($onePage = null) {
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_es?>" class="qtrans_flag qtrans_flag_es"></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_de?>" class="qtrans_flag qtrans_flag_de"><span>Aleman</span></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_fr?>" class="qtrans_flag qtrans_flag_fr"><span>Frances</span></a></li>
-                                </ul>-->
-                            </div>
+                                </ul>
+                            </div>-->
 						</div>
 						
 					</div>
