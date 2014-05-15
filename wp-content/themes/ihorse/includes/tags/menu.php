@@ -44,14 +44,14 @@ function awesomeapp_navbar($onePage = null) {
                                             <?php
                                                 $pageObj = get_page( $navItemMenu['page_select'] );
                                                 $navItemObj = json_decode(json_encode(unserialize(serialize($navItemMenu))));
-                                                //$var_idiom = qtrans_getLanguage();
+                                                $var_idiom = qtrans_getLanguage();
                                                 if(is_page_template('page-one-page.php')) {
-                                                    //$page_url = site_url('/'.$var_idiom.'/#home');
-                                                    $page_url = site_url('/#home');
+                                                    $page_url = site_url('/'.$var_idiom.'/#home');
+                                                    //$page_url = site_url('/#home');
                                                     $page_external_class = "";
                                                 } else {
-                                                    //$page_url = site_url('/'.$var_idiom.'/');
-                                                    $page_url = site_url('/');
+                                                    $page_url = site_url('/'.$var_idiom.'/');
+                                                    //$page_url = site_url('/');
                                                     $page_external_class = "external_url";
                                                 }
                                                 $ot_site_logo = ot_get_option('site_logo');
@@ -77,53 +77,53 @@ function awesomeapp_navbar($onePage = null) {
                                             $pageObj = get_page( $navItemMenu['page_select'] );
                                             $navItemObj = json_decode(json_encode(unserialize(serialize($navItemMenu))));
                                             if(is_page_template('page-one-page.php')) {
-                                                //$var_idiom = qtrans_getLanguage();
-                                                //$page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
-                                                $page_url = site_url('/#').$pageObj->post_name;
+                                                $var_idiom = qtrans_getLanguage();
+                                                $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                //$page_url = site_url('/#').$pageObj->post_name;
                                                 $page_external_class = "";
                                             }
                                             if($navItemMenu['link_type'] === 'page') {
                                                 if(is_page_template('page-one-page.php')) {
-                                                    //$var_idiom = qtrans_getLanguage();
-                                                    //$page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
-                                                    $page_url = site_url('/#').$pageObj->post_name;
+                                                    $var_idiom = qtrans_getLanguage();
+                                                    $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                    //$page_url = site_url('/#').$pageObj->post_name;
                                                     $page_external_class = "";
                                                 } else {
                                                     if($navItemMenu['brick_type'] === 'slogan') {
-                                                        //$var_idiom = qtrans_getLanguage();
-                                                        //$page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
-                                                        $page_url = site_url('/#').$pageObj->post_name;
+                                                        $var_idiom = qtrans_getLanguage();
+                                                        $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                        //$page_url = site_url('/#').$pageObj->post_name;
                                                         $page_external_class = "external_url";
                                                     } else {
-                                                        //$var_idiom = qtrans_getLanguage();
-                                                        //$page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
-                                                        $page_url = get_permalink('/'.$navItemMenu['page_select']);
+                                                        $var_idiom = qtrans_getLanguage();
+                                                        $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                        //$page_url = get_permalink('/'.$navItemMenu['page_select']);
                                                         $page_external_class = "external_url";
-                                                        //$page_url = site_url('/'.$var_idiom);
-                                                        $page_url = site_url('/');
+                                                        $page_url = site_url('/'.$var_idiom);
+                                                        //$page_url = site_url('/');
                                                     }
                                                 }
                                             } else if($navItemMenu['link_type'] === 'page_external') {
-                                                //$var_idiom = qtrans_getLanguage();
-                                                //$page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
-                                                $page_url = get_permalink('/'.$navItemMenu['page_select']);
+                                                $var_idiom = qtrans_getLanguage();
+                                                $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                //$page_url = get_permalink('/'.$navItemMenu['page_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'post_external') {
-                                                //$var_idiom = qtrans_getLanguage();
-                                                //$pageObj = get_post($navItemMenu['post_select']);
-                                                //$page_url = get_permalink('/'.$var_idiom.$navItemMenu['post_select']);
-                                                $page_url = get_permalink('/'.$navItemMenu['post_select']);
+                                                $var_idiom = qtrans_getLanguage();
+                                                $pageObj = get_post($navItemMenu['post_select']);
+                                                $page_url = get_permalink('/'.$var_idiom.$navItemMenu['post_select']);
+                                                //$page_url = get_permalink('/'.$navItemMenu['post_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'category_external') {
-                                                //$var_idiom = qtrans_getLanguage();
-                                                //$pageObj = get_post($navItemMenu['category_select']);
-                                                //$page_url = get_category_link('/'.$var_idiom.$navItemMenu['category_select']);
-                                                $page_url = get_category_link('/'.$navItemMenu['category_select']);
+                                                $var_idiom = qtrans_getLanguage();
+                                                $pageObj = get_post($navItemMenu['category_select']);
+                                                $page_url = get_category_link('/'.$var_idiom.$navItemMenu['category_select']);
+                                                //$page_url = get_category_link('/'.$navItemMenu['category_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'external') {
-                                                //$var_idiom = qtrans_getLanguage();
-                                                //$page_url = '/'.$var_idiom.$navItemMenu['custom_link'];
-                                                $page_url = '/'.$navItemMenu['custom_link'];
+                                                $var_idiom = qtrans_getLanguage();
+                                                $page_url = '/'.$var_idiom.$navItemMenu['custom_link'];
+                                                //$page_url = '/'.$navItemMenu['custom_link'];
                                                 $page_external_class = "external_url";
                                             }
                                         ?>
@@ -136,8 +136,8 @@ function awesomeapp_navbar($onePage = null) {
                                                 <li class="current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
                                             <?php else : ?>
                                                 <li class="<?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
-                                                            //echo qtrans_use($var_idiom, $featureObj->post_title,false);
-                                                            echo $featureObj->post_title;
+                                                            echo qtrans_use($var_idiom, $featureObj->post_title,false);
+                                                            //echo $featureObj->post_title;
                                                         } ?></a></li>
                                             <?php endif; ?>
                                         <?php } ?>
@@ -149,7 +149,7 @@ function awesomeapp_navbar($onePage = null) {
                                         $purchase_link = ot_get_option('purchase_link');
                                         $purchase_link_text = ot_get_option('purchase_link_title');
                                     ?>
-                                    <!--<div class="pull-right"><?php //echo qtrans_generateLanguageSelectCode('image'); ?></div> -->
+                                    <div class="pull-right"><?php echo qtrans_generateLanguageSelectCode('image'); ?></div>
 
                                     <?php if($enable_purchase_button === 'yes' && !empty($enable_purchase_button)) { ?>
                                     <li class="pull-right"><div class="row-fluid"><a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="span12 btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a></div></li>
@@ -159,7 +159,7 @@ function awesomeapp_navbar($onePage = null) {
                                 </ul>
                             </div>
                             <div class="span1">
-                                <!--<ul class="qtrans_language_chooser span1">
+                                <ul class="qtrans_language_chooser span1">
                                     <?php if (is_page_template('page-one-page.php')) {
                                             $page_url_en = site_url('/en/');
                                             $page_url_es = site_url('/es/');
@@ -178,7 +178,7 @@ function awesomeapp_navbar($onePage = null) {
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_es?>" class="qtrans_flag qtrans_flag_es"></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_de?>" class="qtrans_flag qtrans_flag_de"><span>Aleman</span></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_fr?>" class="qtrans_flag qtrans_flag_fr"><span>Frances</span></a></li>
-                                </ul>-->
+                                </ul>
                             </div>
 						</div>
 						

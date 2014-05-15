@@ -142,5 +142,43 @@ img.aligncenter {
 }
 
 .navbar-inverse .btn-navbar {
-	background-color: red !important;
+	background-color: #53BCE8;
+}
+
+.navbar-inverse .btn-navbar {
+	background-color: #53BCE8;
+	background-image: none !important;
+}
+
+.navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active, .navbar-inverse .btn-navbar.disabled, .navbar-inverse .btn-navbar[disabled] {
+	background-color: #6ACBF4;
+}
+
+ul#navigation {
+	margin-bottom: 0px;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
+	background-color: #ffffff !important;
+	border-bottom: solid 1px #f2f2f2 !important;
+	color: #515259 !important;
+	padding: 10px 10px
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:first-child, .navbar-inverse .nav-collapse .dropdown-menu a:first-child {
+	border-top: solid 1px #f2f2f2 !important;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+	background-color: #f3f3f3 !important;
+}
+
+@media(max-width: 769px) {
+	.top_section {
+		display: none;
+	}
+
+	ul#navigation > .pull-right {
+		display: none;
+	}
 }
