@@ -11,23 +11,23 @@ function aa_faqs($params, $content = null){
 	$sqlFaqsAll = $wpdb->get_results("SELECT ID, post_title, post_content FROM {$wpdb->posts} WHERE post_type='faqs' AND post_status='publish'");
 	?>
 		<?php ob_start(); ?>
-        <?php //$var_idiom = qtrans_getLanguage(); ?>
+        <?php $var_idiom = qtrans_getLanguage(); ?>
 		<?php if($deviceType === "phone" ) : ?>
 		<div class="accordion" id="faqs_accordion">
 			<?php $i = 0; foreach($sqlFaqsAll as $key => $val) : $i++; ?>
 			<div class="accordion-group">
 				<div class="accordion-heading">
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#faqs_accordion" href="#faq_<?php echo $i; ?>">
-						<?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-						echo $sqlFaqsAll[$key]->post_title; ?></a>
+						<?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
+						//echo $sqlFaqsAll[$key]->post_title; ?></a>
 
 				</div>
 				<div id="faq_<?php echo $i; ?>" class="accordion-body collapse<?php echo $i==1 ? ' in' : ''; ?>">
 					<div class="accordion-inner">
-						<h5><?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-								echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq" id="polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
-						<p class="marginb_56"><?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
-													echo $sqlFaqsAll[$key]->post_content; ?></p>
+						<h5><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
+								//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq" id="polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+						<p class="marginb_56"><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
+													//echo $sqlFaqsAll[$key]->post_content; ?></p>
 						<div class="row-fluid">
 							<?php
 							$meta_key = 'aa_faq_polling';
@@ -66,8 +66,8 @@ function aa_faqs($params, $content = null){
 				<ul id="faqs_content" class="faqs_content">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $val) : $i1++; ?>
 					<li id="faq_<?php echo $i1; ?>">
-						<h5><?php //echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false);
-								echo $sqlFaqs[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqs[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqs[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqs[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+						<h5><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false);
+								//echo $sqlFaqs[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqs[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqs[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqs[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
 						<?php
 						$meta_key = 'aa_faq_polling';
 						$faq_id = $sqlFaqs[$key]->ID;
@@ -75,8 +75,8 @@ function aa_faqs($params, $content = null){
 						$sqlMetaValue = $wpdb->get_var("SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id=$faq_id AND meta_key='$meta_key'");
 						$unserializeVal = unserialize($sqlMetaValue);
 						?>
-						<p class="marginb_56"><?php //echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_content,false);
-													echo $sqlFaqs[$key]->post_content; ?></p>
+						<p class="marginb_56"><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_content,false);
+													//echo $sqlFaqs[$key]->post_content; ?></p>
 						<div class="row-fluid">
 							<div class="span6 clearfix container_1 marginb_20">
 								<div class="icon_img">
@@ -125,15 +125,15 @@ function aa_faqs($params, $content = null){
 					<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#faqs_accordion" href="#faq_accord_<?php echo $i; ?>">
-								<?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-										echo $sqlFaqsAll[$key]->post_title; ?></a>
+								<?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
+										//echo $sqlFaqsAll[$key]->post_title; ?></a>
 						</div>
 						<div id="faq_accord_<?php echo $i; ?>" class="accordion-ihorsebody collapse<?php echo $i==1 ? ' in' : ''; ?>">
 							<div class="accordion-inner">
-								<h5><?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-										echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
-								<p class="marginb_56"><?php //echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
-														echo $sqlFaqsAll[$key]->post_content; ?></p>
+								<h5><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
+										//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+								<p class="marginb_56"><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
+														//echo $sqlFaqsAll[$key]->post_content; ?></p>
 								<div class="row-fluid">
 									<?php
 									$meta_key = 'aa_faq_polling';
