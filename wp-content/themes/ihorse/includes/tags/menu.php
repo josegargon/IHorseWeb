@@ -149,7 +149,7 @@ function awesomeapp_navbar($onePage = null) {
                                         $purchase_link = ot_get_option('purchase_link');
                                         $purchase_link_text = ot_get_option('purchase_link_title');
                                     ?>
-                                    <div class="pull-right"><?php echo qtrans_generateLanguageSelectCode('image'); ?></div>
+                                    <!--<div class="pull-right"><?php echo qtrans_generateLanguageSelectCode('image'); ?></div>-->
 
                                     <?php if($enable_purchase_button === 'yes' && !empty($enable_purchase_button)) { ?>
                                     <li class="pull-right"><div class="row-fluid"><a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="span12 btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a></div></li>
