@@ -18,8 +18,8 @@
 	}
 ?>
 
-<header class="headerbg_2" id="header_action_<?php echo get_the_ID(); ?>">
-	<div class="theme_col" id="theme_col_<?php echo get_the_ID(); ?>" style="background-image: url('<?php echo $bg_img; ?>'); <?php echo $fixed_style; ?>">
+<header class="headerbg_2 margin_image_to_page" id="header_action_<?php echo get_the_ID(); ?>">
+	<div class="theme_col banner_height" id="theme_col_<?php echo get_the_ID(); ?>" style="background-image: url('<?php echo $bg_img; ?>'); <?php echo $fixed_style; ?>">
 		<?php if($banner_option_display === 'map') { // when map is set as a banner. ?>
 		<figure class="hover_overlay fixedratio_h2" id="fixedratio_h2_<?php echo get_the_ID(); ?>"></figure>
 		<script type="text/javascript">
@@ -87,7 +87,7 @@
 		<div class="overlay_bg" style="<?php echo $enable_hover_state === 'no' ? ' z-index: 110;' : ''; ?>"></div>
 		<div class="content_overlay" style="<?php echo $enable_hover_state === 'no' ? ' z-index: 120;' : ''; ?>">
 			<div class="container">
-				<div class="abs_heading_text">
+				<div class="abs_heading_text text_image_center">
 					<?php echo do_shortcode(get_post_meta( get_the_ID(), 'div_html', true)); ?>
 				</div>
 			</div>

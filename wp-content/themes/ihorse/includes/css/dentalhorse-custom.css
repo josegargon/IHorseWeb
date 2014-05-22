@@ -1,0 +1,28 @@
+.ul_languages {
+    margin-top: 8px;
+}
+
+.no_border {
+    border:0 0 0 0 !important;
+}
+
+.center_links {
+    margin-left: 25px;
+}
+
+.margin_page_to_image {
+    margin-top: 5px;
+    padding-top: 25px;
+}
+
+.margin_image_to_page{
+    margin-top: 50px;
+}
+
+.text_image_center {
+    margin-top: -25% !important;
+}
+
+.banner_height {
+    height: 550px !important;
+}

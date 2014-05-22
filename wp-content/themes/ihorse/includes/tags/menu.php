@@ -62,7 +62,7 @@ function awesomeapp_navbar($onePage = null) {
 						<div class="nav-collapse row-fluid">
                             <div class="span10">
 
-                                <ul class="nav clearfix navigation span12 <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
+                                <ul class="nav clearfix navigation span12 text-center <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
                                     <?php
                                         $page_external_class='';
                                         $page_url='';
@@ -161,9 +161,9 @@ function awesomeapp_navbar($onePage = null) {
                                                     ob_start();
                                                 ?>
                                             <?php if($navItemMenu['brick_type'] === 'slogan') : ?>
-                                                <li class="current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
+                                                <li class="center_links current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
                                             <?php else : ?>
-                                                <li class="<?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
+                                                <li class="center_links <?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="no_border <?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
                                                             echo qtrans_use($var_idiom, $featureObj->post_title,false);
                                                             //echo $featureObj->post_title;
                                                         } ?></a></li>
