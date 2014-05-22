@@ -205,6 +205,12 @@ ul#navigation {
     z-index: 100;
 }
 
+@media (min-width: 980px) {
+    .text_image_center {
+        margin-top: -25% !important;
+    }
+}
+
 @media (max-width: 979px) {
 	.navbar_menu_fixed .row-fluid [class*="span"]{
 		width: 100%;
@@ -214,6 +220,10 @@ ul#navigation {
 	.navbar_menu_fixed .row-fluid .wrap-button{
 		text-align: center;
 	}
+
+    .text_image_center {
+        margin-top: -40% !important;
+    }
 }
 
 
@@ -233,5 +243,9 @@ ul#navigation {
 	    color: #404040;
 	    margin: 0;
 	}
+
+    .text_image_center {
+        margin-top: -100% !important;
+    }
 
 }
