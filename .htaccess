@@ -27,3 +27,6 @@ Redirect 301 /hello-world-2/ http://www.dentalhorse.com
 Redirect 301 /tag/awesome-app/ http://www.dentalhorse.com
 Redirect 301 /get-a-free-mobile-blog/ http://www.dentalhorse.com
 Redirect 301 /nam-liber-tempor-soluta-nobis-eleifend-option/ http://www.dentalhorse.com
+Redirect 301 /habeo-nihil-pri-regione-invidunt-laoreet-dolore/ http://www.dentalhorse.com
+Redirect 301 /contact/ http://www.dentalhorse.com/contacto/
+Redirect 301 /features/ http://www.dentalhorse.com/caracteristicas/

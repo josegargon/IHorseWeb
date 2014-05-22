@@ -21,7 +21,7 @@ $form_location = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
 ?>
 <script>
     jQuery(document).ready(function(){
-        jQuery.post('http://rest.ihorse.me/app_dev.php/registers', <?php echo $user_response ?>, function(response) {
+        jQuery.post('http://rest.dentalhorse.com/registers', <?php echo $user_response ?>, function(response) {
         })
             .done(function(){
                 alert("El usuario se ha creado con éxito.");
