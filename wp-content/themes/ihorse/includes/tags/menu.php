@@ -19,6 +19,11 @@ function awesomeapp_navbar($onePage = null) {
 	}
     global $wpdb;
 ?>
+
+<?php 
+    $ot_site_logo = ot_get_option('site_logo');
+    $logo = !empty($ot_site_logo) ? ot_get_option('site_logo') : get_template_directory_uri().'/includes/css/images/logo.png';
+?>
 <?php // adding the navbar menu .. this will stick on the top when it reaches the top=0. ?>
 
 <ul class="qtrans_language_chooser unstyled inline">
@@ -82,8 +87,6 @@ function awesomeapp_navbar($onePage = null) {
                                                     //$page_url = site_url('/');
                                                     $page_external_class = "external_url";
                                                 }
-                                                $ot_site_logo = ot_get_option('site_logo');
-                                                $logo = !empty($ot_site_logo) ? ot_get_option('site_logo') : get_template_directory_uri().'/includes/css/images/logo.png';
                                              ?>
 
                                                 <?php if($navItemMenu['hide_nav_item'] === 'no') { ?>
