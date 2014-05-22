@@ -15,7 +15,7 @@ $type = $_POST["type"];
 //parametros por defecto
 $result_form   = false;
 $response_form = 'Ha ocurrio un error al intentar procesar la petición, vuelva a intentarlo de nuevo.';
-$redirect_url  = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
+$redirect_url  = 'http://www.dentalhorse.com/formulario?type='.$type;
 $redirect_url_text  = 'Volver al formulario de registro';
 
 if ($email == null || $_POST["password"] == null || $_POST["re_password"] == null || $_POST["password"] != $_POST["re_password"]) {
