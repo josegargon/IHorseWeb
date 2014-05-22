@@ -212,6 +212,16 @@ ul#navigation {
 }
 
 @media (max-width: 979px) {
+	
+	#navbar_menu_fixed{
+		min-height: 50px;
+		padding-top: 15px;
+	}
+
+	#navigation{
+		margin-top: 20px;
+	}
+
 	.navbar_menu_fixed .row-fluid [class*="span"]{
 		width: 100%;
 		margin-left: 0;
