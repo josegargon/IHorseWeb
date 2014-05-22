@@ -34,7 +34,7 @@ function awesomeapp_navbar($onePage = null) {
 						<div class="nav-collapse row-fluid">
                             <div class="span11">
 
-                                <ul class="nav clearfix navigation span12 <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
+                                <ul class="nav clearfix navigation span12 text-center <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
                                     <?php
                                         $page_external_class='';
                                         $page_url='';
@@ -133,9 +133,9 @@ function awesomeapp_navbar($onePage = null) {
                                                     ob_start();
                                                 ?>
                                             <?php if($navItemMenu['brick_type'] === 'slogan') : ?>
-                                                <li class="current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
+                                                <li class="center_links current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo ot_get_option('site_logo'); ?>" alt="logo" /></a></li>
                                             <?php else : ?>
-                                                <li class="<?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
+                                                <li class="center_links <?php echo $page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="no_border <?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><?php foreach($sqlFeatures as $featureObj) {
                                                             echo qtrans_use($var_idiom, $featureObj->post_title,false);
                                                             //echo $featureObj->post_title;
                                                         } ?></a></li>
@@ -159,25 +159,22 @@ function awesomeapp_navbar($onePage = null) {
                                 </ul>
                             </div>
                             <div class="span1">
-                                <ul class="qtrans_language_chooser span1">
+                                <ul class="qtrans_language_chooser span1 ul_languages">
                                     <?php if (is_page_template('page-one-page.php')) {
                                             $page_url_en = site_url('/en/');
                                             $page_url_es = site_url('/es/');
                                             $page_url_de = site_url('/de/');
-                                            $page_url_fr = site_url('/fr/');
                                             $page_external_class = "";
                                           } else {
                                             $pagename = $_SERVER["REQUEST_URI"];
                                             $page_url_en = site_url('/en'.$pagename);
                                             $page_url_es = site_url('/es'.$pagename);
                                             $page_url_de = site_url('/de'.$pagename);
-                                            $page_url_fr = site_url('/fr'.$pagename);
                                             $page_external_class = "";
                                           } ?>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_en?>" class="qtrans_flag qtrans_flag_en"><span>English</span></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_es?>" class="qtrans_flag qtrans_flag_es"></a></li>
                                     <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_de?>" class="qtrans_flag qtrans_flag_de"><span>Aleman</span></a></li>
-                                    <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_fr?>" class="qtrans_flag qtrans_flag_fr"><span>Frances</span></a></li>
                                 </ul>
                             </div>
 						</div>

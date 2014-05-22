@@ -7,7 +7,7 @@
  * @since Awesome App 1.0
  */
 ?>
-<div class="container wrapper_content" id="<?php echo $post->post_name ?>">
+<div class="container wrapper_content margin_page_to_image" id="<?php echo $post->post_name ?>">
 	<div class="wrapper row-fluid">
 		<div class="entry-content heading_1">
 			<?php the_content(); ?>

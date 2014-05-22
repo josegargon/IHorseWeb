@@ -160,7 +160,7 @@ ul#navigation {
 
 .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
 	background-color: #ffffff !important;
-	border-bottom: solid 1px #f2f2f2 !important;
+/*	border-bottom: solid 1px #f2f2f2 !important; */
 	color: #515259 !important;
 	padding: 10px 10px
 }
