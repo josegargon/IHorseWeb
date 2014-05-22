@@ -20,19 +20,47 @@ function awesomeapp_navbar($onePage = null) {
     global $wpdb;
 ?>
 <?php // adding the navbar menu .. this will stick on the top when it reaches the top=0. ?>
+
+<ul class="qtrans_language_chooser unstyled inline">
+    <?php if (is_page_template('page-one-page.php')) {
+            $page_url_en = site_url('/en/');
+            $page_url_es = site_url('/es/');
+            $page_url_de = site_url('/de/');
+            //$page_url_fr = site_url('/fr/');
+            $page_external_class = "";
+          } else {
+            $pagename = $_SERVER["REQUEST_URI"];
+            $page_url_en = site_url('/en'.$pagename);
+            $page_url_es = site_url('/es'.$pagename);
+            $page_url_de = site_url('/de'.$pagename);
+            //$page_url_fr = site_url('/fr'.$pagename);
+            $page_external_class = "";
+          } ?>
+    <li class="<?php echo $page_external_class; ?>"><a href="<?php echo $page_url_en?>" class="qtrans_flag qtrans_flag_en"><span>English</span></a></li>
+    <li class="<?php echo $page_external_class; ?>"><a href="<?php echo $page_url_de?>" class="qtrans_flag qtrans_flag_de"><span>Aleman</span></a></li>
+    <li class="<?php echo $page_external_class; ?>"><a href="<?php echo $page_url_es?>" class="qtrans_flag qtrans_flag_es"></a></li>
+    <!--<li class="<?php echo $page_external_class; ?>"><a href="<?php echo $page_url_fr?>" class="qtrans_flag qtrans_flag_fr"><span>Frances</span></a></li>-->
+</ul>
+
+
 <section class="navbar_menu_fixed" id="navbar_menu_fixed" style="z-index: 200;">
 	<div class="container">
 		<div class="row-fluid">
 			<div class="navbar navbar-inverse">
 				<div class="navbar-inner">
 					<div class="container">
+
+                        <a class="hidden-desktop pull-left" href="<?php echo $page_url; ?>">
+                            <img class="logo" src="<?php echo $logo; ?>" alt="logo" />
+                        </a>
+
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse row-fluid">
-                            <div class="span11">
+                            <div class="span10">
 
                                 <ul class="nav clearfix navigation span12 <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
                                     <?php
@@ -59,7 +87,7 @@ function awesomeapp_navbar($onePage = null) {
                                              ?>
 
                                                 <?php if($navItemMenu['hide_nav_item'] === 'no') { ?>
-                                                <li class="top_section current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo $logo; ?>" alt="logo" /></a></li>
+                                                <li class="top_section visible-desktop current<?php echo ' '.$page_external_class; ?>"><a data-toggle="collapse" data-target=".nav-collapse" class="<?php echo 'page_'.$page_external_class; ?>" href="<?php echo $page_url; ?>"><img class="logo" src="<?php echo $logo; ?>" alt="logo" /></a></li>
                                                 <?php } ?>
                                         <?php } ?>
                                     <?php } else { ?>
@@ -152,33 +180,16 @@ function awesomeapp_navbar($onePage = null) {
                                     <!--<div class="pull-right"><?php echo qtrans_generateLanguageSelectCode('image'); ?></div>-->
 
                                     <?php if($enable_purchase_button === 'yes' && !empty($enable_purchase_button)) { ?>
-                                    <li class="pull-right"><div class="row-fluid"><a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="span12 btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a></div></li>
+                                    <!--<li class="pull-right"><div class="row-fluid"><a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="span12 btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a></div></li>-->
                                     <?php } ?>
 
 
                                 </ul>
                             </div>
-                            <div class="span1">
-                                <ul class="qtrans_language_chooser span1">
-                                    <?php if (is_page_template('page-one-page.php')) {
-                                            $page_url_en = site_url('/en/');
-                                            $page_url_es = site_url('/es/');
-                                            $page_url_de = site_url('/de/');
-                                            $page_url_fr = site_url('/fr/');
-                                            $page_external_class = "";
-                                          } else {
-                                            $pagename = $_SERVER["REQUEST_URI"];
-                                            $page_url_en = site_url('/en'.$pagename);
-                                            $page_url_es = site_url('/es'.$pagename);
-                                            $page_url_de = site_url('/de'.$pagename);
-                                            $page_url_fr = site_url('/fr'.$pagename);
-                                            $page_external_class = "";
-                                          } ?>
-                                    <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_en?>" class="qtrans_flag qtrans_flag_en"><span>English</span></a></li>
-                                    <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_es?>" class="qtrans_flag qtrans_flag_es"></a></li>
-                                    <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_de?>" class="qtrans_flag qtrans_flag_de"><span>Aleman</span></a></li>
-                                    <li class="<?php echo $page_external_class; ?>" style="list-style-type: none; margin-top: 5px;"><a href="<?php echo $page_url_fr?>" class="qtrans_flag qtrans_flag_fr"><span>Frances</span></a></li>
-                                </ul>
+                            <div class="span2 wrap-button">
+                                <?php if($enable_purchase_button === 'yes' && !empty($enable_purchase_button)) { ?>
+                                <a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a>
+                                <?php } ?>
                             </div>
 						</div>
 						
