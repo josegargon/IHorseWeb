@@ -15,24 +15,14 @@ $type = $_POST["type"];
 //parametros por defecto
 $result_form   = false;
 $response_form = 'Ha ocurrio un error al intentar procesar la petición, vuelva a intentarlo de nuevo.';
-$redirect_url  = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
+$redirect_url  = 'http://www.dentalhorse.com/formulario?type='.$type;
 $redirect_url_text  = 'Volver al formulario de registro';
 
 if ($email == null || $_POST["password"] == null || $_POST["re_password"] == null || $_POST["password"] != $_POST["re_password"]) {
     //hacer algo
 } else {
-<<<<<<< HEAD
-
-$ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null), 'type' => $type);
-$user_response = json_encode( $ajax_response_user );
-
-$home_location = 'http://www.dentalhorse.com';
-$form_location = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
-}
-=======
     $ajax_response_user = array('veterinary' => array('email' => $email, 'password' => $password, 'name' => $name, 'last_name' => $last_name, 'clinic' => null), 'type' => $type);
     $user_response = json_encode($ajax_response_user);
->>>>>>> 9e13a0fd13bd59b65cf34722330fe49650e3742c
 ?>
 <script>
     jQuery(document).ready(function(){
@@ -64,8 +54,6 @@ $form_location = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
         ;
     });
 </script>
-<<<<<<< HEAD
-=======
 <?php } ?>
 
 <div class="row-fluid">
@@ -94,4 +82,3 @@ $form_location = 'http://www.dentalhorse.com/formulario'.'?type='.$type;
 </div>
 
 <?php get_footer(); ?>
->>>>>>> 9e13a0fd13bd59b65cf34722330fe49650e3742c
