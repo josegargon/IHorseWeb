@@ -105,7 +105,7 @@ function aa_faqs($params, $content = null){
 				<h5>More FAQs</h5>
 				<ul class="formatted_1" id="faqs_title">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $value) : $i1++; ?>
-					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo $sqlFaqs[$key]->post_title; ?></span></a></li>
+					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false); ?></span></a></li>
 					<?php endforeach; ?>
 				</ul>
 				<a href="#faqs_all" role="button" class="btn btn-info btn-large" data-toggle="modal">Ver todas</a>
