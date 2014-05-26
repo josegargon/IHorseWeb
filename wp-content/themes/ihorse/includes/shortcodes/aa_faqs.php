@@ -108,7 +108,15 @@ function aa_faqs($params, $content = null){
 					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false); ?></span></a></li>
 					<?php endforeach; ?>
 				</ul>
-				<a href="#faqs_all" role="button" class="btn btn-info btn-large" data-toggle="modal">Ver todas</a>
+                <?php $var_translate = qtrans_getLanguage();
+                $btnText = 'Senden';
+                if($var_translate == 'es') {
+                    $btnText = 'Ver todas';
+                } elseif ($var_translate == 'en'){
+                    $btnText = 'Send';
+                }
+                ?>
+				<a href="#faqs_all" role="button" class="btn btn-info btn-large" data-toggle="modal"><?php echo $btnText ?></a>
 			</div>
 			<div class="span1">&nbsp;</div>
 		</div>
