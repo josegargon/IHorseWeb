@@ -26,4 +26,8 @@ get_header('header2'); ?>
 			</div><!-- #primary -->
 		</div>
 	</div>
+    <script type="text/javascript">
+        jQuery('.language').hide();
+        jQuery('<?php echo '.language_'.qtrans_getLanguage(); ?>').show();
+    </script>
 <?php get_footer(); ?>

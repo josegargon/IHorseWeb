@@ -439,7 +439,7 @@
 							<div class="overlay_bg" style="<?php echo $enable_hover_state === 'no' ? 'z-index: 140;' : ''; ?>"></div>
 							<div class="content_overlay" style="<?php echo $enable_hover_state === 'no' ? 'z-index: 150;' : ''; ?>">
 								<div class="container">
-									<div class="abs_heading_text">
+									<div class="abs_heading_text text_image_center">
 										<?php echo do_shortcode($navItemObj->top_section_banner_content); ?>
 										<?php // wp_die($navItemObj->top_section_banner_content); ?>
 									</div>

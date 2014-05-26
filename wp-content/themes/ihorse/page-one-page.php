@@ -33,6 +33,10 @@ get_header(); ?>
 	<?php endwhile;?>
 <?php else : ?>
 <?php endif; ?>
+<script type="text/javascript">
+    jQuery('.language').hide();
+    jQuery('<?php echo '.language_'.qtrans_getLanguage(); ?>').show();
+</script>
 <?php wp_reset_query(); ?>
 
 <?php get_footer(); ?>
