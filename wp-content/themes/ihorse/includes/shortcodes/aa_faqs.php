@@ -109,11 +109,11 @@ function aa_faqs($params, $content = null){
 					<?php endforeach; ?>
 				</ul>
                 <?php $var_translate = qtrans_getLanguage();
-                $btnText = 'Senden';
+                $btnText = 'Alle anzeigen';
                 if($var_translate == 'es') {
                     $btnText = 'Ver todas';
                 } elseif ($var_translate == 'en'){
-                    $btnText = 'Send';
+                    $btnText = 'Display all';
                 }
                 ?>
 				<a href="#faqs_all" role="button" class="btn btn-info btn-large" data-toggle="modal"><?php echo $btnText ?></a>

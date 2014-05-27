@@ -14,9 +14,27 @@ $type = $_POST["type"];
 
 //parametros por defecto
 $result_form   = false;
-$response_form = 'Ha ocurrio un error al intentar procesar la petición, vuelva a intentarlo de nuevo.';
+$var_idiom = qtrans_getLanguage();
+$redirect_url_text = 'Zurück zum Anmeldeformular';
+$response_form = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es zu einem späteren Zeitpunkt noch einmal.';
+$register_ok = 'Anmeldung war korrekt durchgeführt. Sie können mit Benutzername und Kennwort aus Formular auf App zugreifen.';
+$come_back = 'Zurück zum Anfang';
+$user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
+if($var_idiom == 'es') {
+    $redirect_url_text  = 'Volver al formulario de registro';
+    $response_form = 'Ha ocurrio un error al intentar procesar la petición, vuelva a intentarlo de nuevo.';
+    $register_ok = 'El registro se realizó correctamente. Ya puede acceder a su aplicación con el usuario y contraseña que indicó en el formulario';
+    $come_back = 'Volver al inicio';
+    $user_exist = 'El usuario indicado ya existe en nuestra base de datos.';
+} elseif ($var_idiom == 'en'){
+    $redirect_url_text = 'Zurück zum Anmeldeformular';
+    $response_form = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es zu einem späteren Zeitpunkt noch einmal.';
+    $register_ok = 'Anmeldung war korrekt durchgeführt. Sie können mit Benutzername und Kennwort aus Formular auf App zugreifen.';
+    $come_back = 'Zurück zum Anfang';
+    $user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
+}
+
 $redirect_url  = 'http://www.dentalhorse.com/formulario?type='.$type;
-$redirect_url_text  = 'Volver al formulario de registro';
 
 if ($email == null || $_POST["password"] == null || $_POST["re_password"] == null || $_POST["password"] != $_POST["re_password"]) {
     //hacer algo
@@ -34,12 +52,12 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
                 //del texto y de su clase
                 $('#text-response').removeClass('alert-danger');
                 $('#text-response').addClass('alert-success');
-                $('#text-response').text('El registro se realizó correctamente. Ya puede acceder a su aplicación con el usuario y contraseña que indicó en el formulario');
+                $('#text-response').text('<?php echo $register_ok ?>');
 
                 //enlace
                 $('#link-response').attr('href', 'http://www.dentalhorse.com/');
                 $('#text-response').addClass('alert-success');
-                $('#link-response').text('Volver al inicio');
+                $('#link-response').text('<?php echo $come_back ?>');
 
                 //enlace a APP
                 $('#link-app').show();
@@ -49,7 +67,7 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
 
                 //Cambiamos propiedades de la capa 
                 //del texto y de su clase
-                $('#text-response').text('El usuario indicado ya existe en nuestra base de datos');
+                $('#text-response').text('<?php echo $user_exist ?>');
             })
         ;
     });
