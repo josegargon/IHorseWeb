@@ -30,14 +30,15 @@ function awesomeapp_navbar($onePage = null) {
     <?php if (is_page_template('page-one-page.php')) {
             $page_url_en = site_url('/en/');
             $page_url_es = site_url('/es/');
-            $page_url_de = site_url('/de/');
+            $page_url_de = site_url('/');
             //$page_url_fr = site_url('/fr/');
             $page_external_class = "";
+
           } else {
             $pagename = $_SERVER["REQUEST_URI"];
             $page_url_en = site_url('/en'.$pagename);
             $page_url_es = site_url('/es'.$pagename);
-            $page_url_de = site_url('/de'.$pagename);
+            $page_url_de = site_url($pagename);
             //$page_url_fr = site_url('/fr'.$pagename);
             $page_external_class = "";
           } ?>
@@ -109,25 +110,41 @@ function awesomeapp_navbar($onePage = null) {
                                             $navItemObj = json_decode(json_encode(unserialize(serialize($navItemMenu))));
                                             if(is_page_template('page-one-page.php')) {
                                                 $var_idiom = qtrans_getLanguage();
-                                                $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                if ($var_idiom == 'de') {
+                                                    $page_url = site_url('/#').$pageObj->post_name;
+                                                } else {
+                                                    $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                }
                                                 //$page_url = site_url('/#').$pageObj->post_name;
                                                 $page_external_class = "";
                                             }
                                             if($navItemMenu['link_type'] === 'page') {
                                                 if(is_page_template('page-one-page.php')) {
                                                     $var_idiom = qtrans_getLanguage();
-                                                    $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                    if ($var_idiom == 'de') {
+                                                        $page_url = site_url('/#').$pageObj->post_name;
+                                                    } else {
+                                                        $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                    }
                                                     //$page_url = site_url('/#').$pageObj->post_name;
                                                     $page_external_class = "";
                                                 } else {
                                                     if($navItemMenu['brick_type'] === 'slogan') {
                                                         $var_idiom = qtrans_getLanguage();
-                                                        $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                        if ($var_idiom == 'de') {
+                                                            $page_url = site_url('/#').$pageObj->post_name;
+                                                        } else {
+                                                            $page_url = site_url('/'.$var_idiom.'/#').$pageObj->post_name;
+                                                        }
                                                         //$page_url = site_url('/#').$pageObj->post_name;
                                                         $page_external_class = "external_url";
                                                     } else {
                                                         $var_idiom = qtrans_getLanguage();
-                                                        $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                        if ($var_idiom == 'de') {
+                                                            $page_url = get_permalink('/'.$navItemMenu['page_select']);
+                                                        } else {
+                                                            $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                        }
                                                         //$page_url = get_permalink('/'.$navItemMenu['page_select']);
                                                         $page_external_class = "external_url";
                                                         $page_url = site_url('/'.$var_idiom);
@@ -136,24 +153,40 @@ function awesomeapp_navbar($onePage = null) {
                                                 }
                                             } else if($navItemMenu['link_type'] === 'page_external') {
                                                 $var_idiom = qtrans_getLanguage();
-                                                $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                if ($var_idiom == 'de') {
+                                                    $page_url = site_url('/'.$navItemMenu['page_select']);
+                                                } else {
+                                                    $page_url = get_permalink('/'.$var_idiom.$navItemMenu['page_select']);
+                                                }
                                                 //$page_url = get_permalink('/'.$navItemMenu['page_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'post_external') {
                                                 $var_idiom = qtrans_getLanguage();
+                                                if ($var_idiom == 'de') {
+                                                    $page_url = site_url('/'.$navItemMenu['post_select']);
+                                                } else {
+                                                    $page_url = get_permalink('/'.$var_idiom.$navItemMenu['post_select']);
+                                                }
                                                 $pageObj = get_post($navItemMenu['post_select']);
-                                                $page_url = get_permalink('/'.$var_idiom.$navItemMenu['post_select']);
                                                 //$page_url = get_permalink('/'.$navItemMenu['post_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'category_external') {
                                                 $var_idiom = qtrans_getLanguage();
                                                 $pageObj = get_post($navItemMenu['category_select']);
-                                                $page_url = get_category_link('/'.$var_idiom.$navItemMenu['category_select']);
+                                                if ($var_idiom == 'de') {
+                                                    $page_url = get_permalink('/'.$navItemMenu['category_select']);
+                                                } else {
+                                                    $page_url = get_permalink('/'.$var_idiom.$navItemMenu['category_select']);
+                                                }
                                                 //$page_url = get_category_link('/'.$navItemMenu['category_select']);
                                                 $page_external_class = "external_url";
                                             } else if($navItemMenu['link_type'] === 'external') {
                                                 $var_idiom = qtrans_getLanguage();
-                                                $page_url = '/'.$var_idiom.$navItemMenu['custom_link'];
+                                                if ($var_idiom == 'de') {
+                                                    $page_url = get_permalink('/'.$navItemMenu['custom_link']);
+                                                } else {
+                                                    $page_url = get_permalink('/'.$var_idiom.$navItemMenu['custom_link']);
+                                                }
                                                 //$page_url = '/'.$navItemMenu['custom_link'];
                                                 $page_external_class = "external_url";
                                             }
