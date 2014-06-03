@@ -30,3 +30,5 @@ Redirect 301 /nam-liber-tempor-soluta-nobis-eleifend-option/ http://www.dentalho
 Redirect 301 /habeo-nihil-pri-regione-invidunt-laoreet-dolore/ http://www.dentalhorse.com
 Redirect 301 /contact/ http://www.dentalhorse.com/contacto/
 Redirect 301 /features/ http://www.dentalhorse.com/caracteristicas/
+
+php_flag display_errors on
