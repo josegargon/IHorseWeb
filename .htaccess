@@ -1,10 +1,21 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+# defaults to the english site
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^/$ /de/ [L,R=301]
+
+RewriteCond %{HTTP:Accept-Language} ^es [NC]
+RewriteRule ^/$ /es/ [L,R=301]
+
+RewriteRule ^/$ /en/ [L,R=301]
+
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+
 </IfModule>
 Redirect 301 /2013/07/ http://www.dentalhorse.com
 Redirect 301 /author/awesomeapp_admin/ http://www.dentalhorse.com
@@ -30,3 +41,5 @@ Redirect 301 /nam-liber-tempor-soluta-nobis-eleifend-option/ http://www.dentalho
 Redirect 301 /habeo-nihil-pri-regione-invidunt-laoreet-dolore/ http://www.dentalhorse.com
 Redirect 301 /contact/ http://www.dentalhorse.com/contacto/
 Redirect 301 /features/ http://www.dentalhorse.com/caracteristicas/
+
+php_flag display_errors on

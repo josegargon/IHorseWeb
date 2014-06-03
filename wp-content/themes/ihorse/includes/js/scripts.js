@@ -350,7 +350,7 @@ jQuery(document).ready(function(jQuery) {
 	/*----------------------------------------------------*/
 
 	
-	$(window).resize(function() {
+	/*$(window).resize(function() {
 		resizeBanner();
 	});
 	$(window).resize();
@@ -372,7 +372,7 @@ jQuery(document).ready(function(jQuery) {
 			});
 			$('.page_content h3').css({ 'height': t+'px' });
 		});
-	}
+	}*/
 
 	/*----------------------------------------------------*/
 	// PARALLAX INITIALIZATION 
@@ -410,7 +410,7 @@ jQuery(document).ready(function(jQuery) {
 jQuery(window).load(function() {
 	"use strict";	
 	var $ = jQuery;
-	$('#page .theme_col').each(function() {
+	/*$('#page .theme_col').each(function() {
 		var h1_height = $(this).height();
 		var h1_height_sub = $(this).find('.abs_heading_text').height();
 		var h1_mtop_1 = (h1_height + h1_height_sub) / 2;
@@ -426,7 +426,7 @@ jQuery(window).load(function() {
 			}
 		});
 		$('.page_content h3').css({ 'height': t+'px' });
-	});
+	});*/
 
 	if ( /iPad/i.test(navigator.userAgent) ) { 
 		jQuery("html").addClass("tablet");
@@ -444,4 +444,16 @@ jQuery(window).load(function() {
         $(".headerbg_1_themecol_mobile").height($(window).height());
         $(".headerbg_2_themecol_mobile").height($(window).height());
     });
+
+    //Para corregir enlaces del multi-idioma en DentalHorse
+	/*var path = window.location.pathname;
+	var lang = path.match(/^\/([a-z]{2})\/?/i);
+
+	if(lang == null){
+		$('#navigation li a.page_').each(function(key, value){
+			var link = $(value).attr('href').split('#')[1];
+			$(value).attr('href', 'http://www.dentalhorse.com/#' + link);
+		});
+	}*/
+
 });

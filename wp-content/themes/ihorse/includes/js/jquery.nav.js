@@ -156,7 +156,7 @@
 				
 				//Removing the auto-adjust on scroll
 				self.unbindInterval();
-				
+
 				//Scroll to the correct position
 				$.scrollTo(newLoc, self.config.scrollSpeed, {
 					axis: 'y',
@@ -169,7 +169,6 @@
 						if(self.config.changeHash) {
 							window.location.hash = newLoc;
 						}
-						
 						//Add the auto-adjust on scroll back in
 						self.bindInterval();
 						

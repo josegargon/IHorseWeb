@@ -55,8 +55,8 @@ function awesomeapp_navbar($onePage = null) {
 				<div class="navbar-inner">
 					<div class="container">
 
-                        <a class="hidden-desktop pull-left" href="<?php echo $page_url; ?>">
-                            <img class="logo" src="<?php echo $logo; ?>" alt="logo" />
+                        <a class="pull-left" href="<?php echo $page_url; ?>">
+                            <span class="title-logo hidden-desktop">Dental<strong>Horse</strong></span>
                         </a>
 
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -65,7 +65,7 @@ function awesomeapp_navbar($onePage = null) {
 						<span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse row-fluid">
-                            <div class="span10">
+                            <div class="span12">
 
                                 <ul class="nav clearfix navigation span12 text-center <?php echo (is_home()) ? '' : 'external_page'; ?>" id="navigation">
                                     <?php
@@ -189,11 +189,11 @@ function awesomeapp_navbar($onePage = null) {
 
                                 </ul>
                             </div>
-                            <div class="span2 wrap-button">
+                            <!--<div class="span3 wrap-button">
                                 <?php if($enable_purchase_button === 'yes' && !empty($enable_purchase_button)) { ?>
                                 <a target="_blank" href="<?php echo !empty($purchase_link) ? $purchase_link : '#'; ?>" class="btn btn-info purchase_btn"><?php echo $purchase_link_text; ?></a>
                                 <?php } ?>
-                            </div>
+                            </div>-->
 						</div>
 						
 					</div>
