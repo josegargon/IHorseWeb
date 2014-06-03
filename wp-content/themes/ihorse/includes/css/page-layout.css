@@ -1843,6 +1843,13 @@ hr {
     .row-fluid [class*="span"], .row-fluid [class^="span"] {
         text-align: center !important;
     }
+
+    .abs_heading_text{
+        left:0;
+        padding: 0 15px;
+        max-width: 767px;
+    }
+
     .abs_heading_text .row-fluid [class*="span"], .abs_heading_text .row-fluid [class^="span"] {
         text-align: left !important;
     }
@@ -2000,9 +2007,9 @@ hr {
         float: right !important;
         width: auto;
     }
-    figure.fixedratio_h1, figure.fixedratio_h2, figure.fixedratio_h3 {
+    /*figure.fixedratio_h1, figure.fixedratio_h2, figure.fixedratio_h3 {
         padding: 55% 0;
-    }
+    }*/
     .theme_col {
         margin-bottom: 4rem;
     }

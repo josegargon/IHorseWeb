@@ -27,10 +27,10 @@ function aa_demo_signup($params, $content = null){
 			<div class="span4">
 				<input type="text" id="email_subscribe" name="email_subscribe" class="span12" placeholder="Email">
 			</div>
-			<div class="span2">
+			<div class="span4">
 				<button class="span12 btn btn-info btn-large">Pedir información</button>
 			</div>
-			<div class="span6">
+			<div class="span4">
 			</div>
 		</form>
 	</div>
