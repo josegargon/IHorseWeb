@@ -11,7 +11,20 @@ function aa_faqs($params, $content = null){
 	$sqlFaqsAll = $wpdb->get_results("SELECT ID, post_title, post_content FROM {$wpdb->posts} WHERE post_type='faqs' AND post_status='publish'");
 	?>
 		<?php ob_start(); ?>
-        <?php $var_idiom = qtrans_getLanguage(); ?>
+        <?php $var_idiom = qtrans_getLanguage();
+        $btnUseful = 'Nützlich';
+        $btnNotUseful = 'Unnützlich';
+        $btnMoreFaqs = 'Mehr FAQs';
+        if($var_idiom == 'es') {
+            $btnUseful = 'Es útil.';
+            $btnNotUseful = 'No es útil.';
+            $btnMoreFaqs = 'Más FAQs';
+        } elseif ($var_idiom == 'en') {
+            $btnUseful = 'Useful.';
+            $btnNotUseful = 'Not Useful.';
+            $btnMoreFaqs = 'More FAQs';
+        }
+        ?>
 		<?php if($deviceType === "phone" ) : ?>
 		<div class="accordion" id="faqs_accordion">
 			<?php $i = 0; foreach($sqlFaqsAll as $key => $val) : $i++; ?>
@@ -25,7 +38,7 @@ function aa_faqs($params, $content = null){
 				<div id="faq_<?php echo $i; ?>" class="accordion-body collapse<?php echo $i==1 ? ' in' : ''; ?>">
 					<div class="accordion-inner">
 						<h5><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-								//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq" id="polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+								//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq" id="polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> <?php echo $btnUseful?></a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> <?php echo $btnNotUseful?></a></span></h5>
 						<p class="marginb_56"><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
 													//echo $sqlFaqsAll[$key]->post_content; ?></p>
 						<div class="row-fluid">
@@ -42,7 +55,7 @@ function aa_faqs($params, $content = null){
 								</div>
 								<div class="icon_desc">
 									<p id="vote_yes_<?php echo $sqlFaqsAll[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_yes']) ? $unserializeVal['vote_yes'] : 0; ?></strong></p>
-									<p>People found this useful.</p>
+                                    <p><?php echo $btnUseful?></p>
 								</div>
 							</div>
 							<div class="span6 clearfix container_1 marginb_20">
@@ -51,7 +64,7 @@ function aa_faqs($params, $content = null){
 								</div>
 								<div class="icon_desc">
 									<p id="vote_no_<?php echo $sqlFaqsAll[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_no']) ? $unserializeVal['vote_no'] : 0; ?></strong></p>
-									<p>People found this stupid.</p>
+                                    <p><?php echo $btnNotUseful ?></p>
 								</div>
 							</div>
 						</div>
@@ -67,7 +80,7 @@ function aa_faqs($params, $content = null){
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $val) : $i1++; ?>
 					<li id="faq_<?php echo $i1; ?>">
 						<h5><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false);
-								//echo $sqlFaqs[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqs[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqs[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqs[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+								//echo $sqlFaqs[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqs[$key]->ID ?>"><a class="up_vote" id="voteup_<?php echo $sqlFaqs[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> <?php echo $btnUseful?></a> <a href="javascript:void(0);" class="down_vote" id="votedown_<?php echo $sqlFaqs[$key]->ID ?>"><i class="icon-thumbs-down"></i> <?php echo $btnNotUseful?></a></span></h5>
 						<?php
 						$meta_key = 'aa_faq_polling';
 						$faq_id = $sqlFaqs[$key]->ID;
@@ -84,7 +97,7 @@ function aa_faqs($params, $content = null){
 								</div>
 								<div class="icon_desc">
 									<p class="vote_yes_<?php echo $sqlFaqs[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_yes']) ? $unserializeVal['vote_yes'] : 0; ?></strong></p>
-									<p>People found this useful.</p>
+                                    <p><?php echo $btnUseful?></p>
 								</div>
 							</div>
 							<div class="span6 clearfix container_1 marginb_20">
@@ -93,7 +106,7 @@ function aa_faqs($params, $content = null){
 								</div>
 								<div class="icon_desc">
 									<p class="vote_no_<?php echo $sqlFaqs[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_no']) ? $unserializeVal['vote_no'] : 0; ?></strong></p>
-									<p>People found this stupid.</p>
+                                    <p><?php echo $btnNotUseful ?></p>
 								</div>
 							</div>
 						</div>
@@ -102,7 +115,7 @@ function aa_faqs($params, $content = null){
 				</ul>
 			</div>
 			<div class="span4">
-				<h5>More FAQs</h5>
+				<h5><?php echo $btnMoreFaqs ?></h5>
 				<ul class="formatted_1" id="faqs_title">
 					<?php $i1 = 0; foreach($sqlFaqs as $key => $value) : $i1++; ?>
 					<li class="clearfix"><a id="title_faq_<?php echo $i1; ?>" <?php echo $i1 == 1 ? ' class="clearfix active"' : 'class="clearfix"'; ?> href="javascript:void(0);"><i class="icon-chevron-left"></i><span class="title_faq_item"><?php echo qtrans_use($var_idiom, $sqlFaqs[$key]->post_title,false); ?></span></a></li>
@@ -139,7 +152,7 @@ function aa_faqs($params, $content = null){
 						<div id="faq_accord_<?php echo $i; ?>" class="accordion-ihorsebody collapse<?php echo $i==1 ? ' in' : ''; ?>">
 							<div class="accordion-inner">
 								<h5><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_title,false);
-										//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> Useful!</a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> Not useful!</a></span></h5>
+										//echo $sqlFaqsAll[$key]->post_title; ?><span class="f_right polling_faq polling_faq_<?php echo $sqlFaqsAll[$key]->ID ?>"><a class="up_voteaccord" id="voteupaccord_<?php echo $sqlFaqsAll[$key]->ID ?>" href="javascript:void(0);"><i class="icon-thumbs-up"></i> <?php echo $btnUseful?></a> <a href="javascript:void(0);" class="down_voteaccord" id="votedownaccord_<?php echo $sqlFaqsAll[$key]->ID ?>"><i class="icon-thumbs-down"></i> <?php echo $btnNotUseful?></a></span></h5>
 								<p class="marginb_56"><?php echo qtrans_use($var_idiom, $sqlFaqsAll[$key]->post_content,false);
 														//echo $sqlFaqsAll[$key]->post_content; ?></p>
 								<div class="row-fluid">
@@ -156,7 +169,7 @@ function aa_faqs($params, $content = null){
 										</div>
 										<div class="icon_desc">
 											<p class="vote_yes_<?php echo $sqlFaqsAll[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_yes']) ? $unserializeVal['vote_yes'] : 0; ?></strong></p>
-											<p>People found this useful.</p>
+                                            <p><?php echo $btnUseful?></p>
 										</div>
 									</div>
 									<div class="span6 clearfix container_1 marginb_20">
@@ -165,7 +178,7 @@ function aa_faqs($params, $content = null){
 										</div>
 										<div class="icon_desc">
 											<p class="vote_no_<?php echo $sqlFaqsAll[$key]->ID; ?>"><strong><?php echo !empty($unserializeVal['vote_no']) ? $unserializeVal['vote_no'] : 0; ?></strong></p>
-											<p>People found this stupid.</p>
+                                            <p><?php echo $btnNotUseful ?></p>
 										</div>
 									</div>
 								</div>
