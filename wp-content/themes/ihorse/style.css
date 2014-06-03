@@ -169,7 +169,7 @@ ul#navigation {
 .navbar-inverse .nav-collapse .nav > li > a:active,
 .navbar-inverse .nav-collapse .nav > li > a:focus,
 .navbar-inverse .nav-collapse .nav > li > a:hover{
-	padding: 10px 15px;
+	padding: 7px 20px 10px;
 }
 
 .navbar-inverse .nav-collapse .nav > li > a, 
@@ -205,17 +205,10 @@ ul#navigation {
     z-index: 100;
 }
 
-@media (min-width: 980px) {
-    .text_image_center {
-        margin-top: -25% !important;
-    }
-}
-
-@media (max-width: 979px) {
+@media (max-width: 1024px) {
 	
 	#navbar_menu_fixed{
 		min-height: 50px;
-		padding-top: 15px;
 	}
 
 	#navigation{
@@ -231,11 +224,77 @@ ul#navigation {
 		text-align: center;
 	}
 
-    .text_image_center {
-        margin-top: -40% !important;
+    #navigation{
+    	margin-top: 0px;
     }
+
+	.table .table_tablet {
+	    height: 38px;
+	}
+
+    .table  p.fs_40 {
+    	font-size: 24px !important;
+    	margin-bottom: 0px !important;
+	}
+
 }
 
+@media(max-width: 978px) {
+
+    #navigation{
+    	margin: 10px 0;
+    }
+
+	.navbar .btn, 
+	.navbar .btn-group {
+		margin-top: 12px;
+	}
+
+	.navbar-inverse .brand:focus, 
+	.navbar-inverse .nav > li > a:focus, 
+	.navbar .nav > li > a {    
+		text-align: left !important;
+	}
+
+	.navbar-inverse .nav-collapse .nav > li.current a {
+		background: #FFF !important;
+		color: #5BBFE9 !important;
+	}
+
+	ul#navigation li.center_links {
+		text-align: left;
+    	border-bottom: 1px solid #DDD;
+    	margin-left: 0px;
+	}
+
+	ul#navigation li.center_links:last-child {
+		border-bottom: 0px;
+	}
+
+	.title-logo{
+		font-size: 24px;
+		font-weight: normal;
+		line-height: 38px;
+		text-transform: uppercase;
+		color:#515259;
+		margin-top: 6px;
+	}
+
+    .table p.fs_20 {
+    	font-size: 16px !important;
+    	margin-bottom: 0px !important;
+	}
+
+    .table .fs_26 {
+    	font-size: 18px !important;
+	}
+
+	/*Description producto*/
+	.table tbody tr:nth-child(2) td{
+		height: 50px;
+	}
+
+}
 
 @media(max-width: 769px) {
 	.top_section {
@@ -254,8 +313,22 @@ ul#navigation {
 	    margin: 0;
 	}
 
-    .text_image_center {
-        margin-top: -100% !important;
+    #navigation{
+    	margin-top: 20px;
     }
+
+	.center_links {
+		text-align: left;
+    	padding-left: 20px;
+	}
+
+	/*Description producto*/
+	.table tbody tr:nth-child(2) td{
+		height: 35px;
+	}
+
+	#faqs_title.formatted_1 li a{
+		text-align: right;
+	}
 
 }

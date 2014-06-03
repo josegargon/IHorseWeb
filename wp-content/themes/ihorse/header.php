@@ -39,7 +39,7 @@ wp_enqueue_script('jquery');
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/css/dentalhorse-custom.css">
 </head>
 <body <?php body_class(); ?>>
-	<div id="fb-root"></div>
+	<!--<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
@@ -47,7 +47,7 @@ wp_enqueue_script('jquery');
 	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=340001492680030";
 	fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-	</script>
+	</script>-->
 	<div id="page" class="hfeed site">
 		<?php 
 			global $enable_hover_state, $deviceType, $mobileDetectObj;

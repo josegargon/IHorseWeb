@@ -1,5 +1,5 @@
 <?php
-	
+
 	/**
 	* Set the content width based on the theme's design and stylesheet.
 	*/
@@ -108,5 +108,27 @@
 
 	require_once('includes/functions.php');
 
+
+	//Obtenemos idioma del navegador
+	function getUserLanguage() { 
+		$result = preg_match('/^\/[a-z]{2}\/?/i', $_SERVER['REQUEST_URI'], $match);
+		if(!$result){
+			$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+			return $lang; 
+		}else{
+			return array_shift($match); 
+		}
+	}
+
+	//ya hay idioma en la URL
+	/*function redirectUrlLanguage(){
+
+		if(!preg_match('/^\/[a-z]{2}\/?/i', $_SERVER['REQUEST_URI'])){
+
+			$lang = getUserBrowserLanguage();
+			wp_redirect(site_url('/'.$lang.'/'));
+			exit;
+		}
+	}*/
 
 ?>

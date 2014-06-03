@@ -36,7 +36,7 @@ function aa_contact_form($params, $content = null){
 			<li><textarea placeholder="<?php echo $placeholderMessage; ?>" class="span12" name="contact_message" id="contact_message" cols="30" rows="5"></textarea></li>
 		</ul>
 
-		<button id="btnSendRequest" class="btn btn-inverse btn-large"><?php echo $btnText ?></button><span id="request_results"></span>
+		<button id="btnSendRequest" class="btn btn-info btn-large"><?php echo $btnText ?></button><span id="request_results"></span>
 		</form>
 	</div>
 	<?php 
