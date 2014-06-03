@@ -296,7 +296,7 @@ ul#navigation {
 
 }
 
-@media(max-width: 769px) {
+@media(max-width: 767px) {
 	.top_section {
 		display: none;
 	}
@@ -320,11 +320,6 @@ ul#navigation {
 	.center_links {
 		text-align: left;
     	padding-left: 20px;
-	}
-
-	/*Description producto*/
-	.table tbody tr:nth-child(2) td{
-		height: 35px;
 	}
 
 	#faqs_title.formatted_1 li a{
