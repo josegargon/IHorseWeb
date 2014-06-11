@@ -10,7 +10,7 @@ $name = $_POST["name"];
 $last_name = $_POST["last_name"];
 $password = $_POST["password"];
 $clinic = $_POST["email"];
-$type = $_POST["type"];
+$type = "free-month";
 
 //parametros por defecto
 $result_form   = false;
@@ -34,7 +34,7 @@ if($var_idiom == 'es') {
     $user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
 }
 
-$redirect_url  = 'http://www.dentalhorse.com/formulario?type='.$type;
+$redirect_url  = 'http://www.dentalhorse.com/formulario';
 
 if ($email == null || $_POST["password"] == null || $_POST["re_password"] == null || $_POST["password"] != $_POST["re_password"]) {
     //hacer algo
