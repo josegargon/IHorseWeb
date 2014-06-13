@@ -80,11 +80,19 @@ function awesomeapp_navbar($onePage = null) {
                                                 $navItemObj = json_decode(json_encode(unserialize(serialize($navItemMenu))));
                                                 $var_idiom = qtrans_getLanguage();
                                                 if(is_page_template('page-one-page.php')) {
-                                                    $page_url = site_url('/'.$var_idiom.'/#home');
+                                                    if ($var_idiom == 'de') {
+                                                        $page_url = site_url('/#home');
+                                                    } else {
+                                                        $page_url = site_url('/'.$var_idiom.'/#home');
+                                                    }
                                                     //$page_url = site_url('/#home');
                                                     $page_external_class = "";
                                                 } else {
-                                                    $page_url = site_url('/'.$var_idiom.'/');
+                                                    if ($var_idiom == 'de') {
+                                                        $page_url = site_url('/');
+                                                    } else {
+                                                        $page_url = site_url('/'.$var_idiom.'/');
+                                                    }
                                                     //$page_url = site_url('/');
                                                     $page_external_class = "external_url";
                                                 }
