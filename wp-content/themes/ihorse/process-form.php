@@ -20,18 +20,21 @@ $response_form = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie e
 $register_ok = 'Anmeldung war korrekt durchgeführt. Sie können mit Benutzername und Kennwort aus Formular auf App zugreifen.';
 $come_back = 'Zurück zum Anfang';
 $user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
+$use_our_app = 'Jetzt haben Sie auf Ihrem iPad Zugriff auf Dental Horse, indem Sie Ihre ausgewählte E-mail Adresse und Kennwort eingeben.';
 if($var_idiom == 'es') {
     $redirect_url_text  = 'Volver al formulario de registro';
     $response_form = 'Ha ocurrio un error al intentar procesar la petición, vuelva a intentarlo de nuevo.';
     $register_ok = 'El registro se realizó correctamente. Ya puede acceder a su aplicación con el usuario y contraseña que indicó en el formulario';
     $come_back = 'Volver al inicio';
     $user_exist = 'El usuario indicado ya existe en nuestra base de datos.';
+    $use_our_app = 'Ya puedes acceder a Dental Horse en tu iPad introduciendo el correo y la contraseña que nos has proporcionado';
 } elseif ($var_idiom == 'en'){
     $redirect_url_text = 'Zurück zum Anmeldeformular';
     $response_form = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es zu einem späteren Zeitpunkt noch einmal.';
     $register_ok = 'Anmeldung war korrekt durchgeführt. Sie können mit Benutzername und Kennwort aus Formular auf App zugreifen.';
     $come_back = 'Zurück zum Anfang';
     $user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
+    $use_our_app = 'Now you can access Dental Horse on your iPad by entering the email and password you have chosen.';
 }
 
 $redirect_url  = 'http://www.dentalhorse.com/formulario';
@@ -82,6 +85,9 @@ if ($email == null || $_POST["password"] == null || $_POST["re_password"] == nul
                 <div class="alert alert-danger" id="text-response">
                     <?php echo $response_form; ?>
                 </div>
+            </p>
+            <p id="link-app" style="margin-bottom:30px;font-size:18px;display:none;">
+                <?php echo $use_our_app; ?>
             </p>
             <p id="link-app" style="margin-bottom:30px;font-size:18px;display:none;"> 
                 <i class="icon-exclamation-sign" style="padding-right:6px;"></i>
