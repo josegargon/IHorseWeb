@@ -21,14 +21,22 @@ function aa_demo_signup($params, $content = null){
 		"button_text" => 'SIGN ME UP'
 		), $params));
 	?>
-	<?php ob_start(); ?>
+	<?php ob_start();
+    $var_idiom = qtrans_getLanguage();
+    $ask = 'Informationen anfordern';
+    if($var_idiom == 'es') {
+        $ask  = 'Pedir información';
+    } elseif ($var_idiom == 'en'){
+        $ask = 'request information';
+    }
+    ?>
 	<div class="row-fluid">
 		<form name="emailSubscribeForm" id="emailSubscribeForm" action="post">
 			<div class="span4">
 				<input type="text" id="email_subscribe" name="email_subscribe" class="span12" placeholder="Email">
 			</div>
 			<div class="span4">
-				<button class="span12 btn btn-info btn-large">Pedir información</button>
+				<button class="span12 btn btn-info btn-large"><?php echo $ask ?></button>
 			</div>
 			<div class="span4">
 			</div>
