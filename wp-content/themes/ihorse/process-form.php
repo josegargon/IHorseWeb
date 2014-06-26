@@ -29,11 +29,11 @@ if($var_idiom == 'es') {
     $user_exist = 'El usuario indicado ya existe en nuestra base de datos.';
     $use_our_app = 'Ya puedes acceder a Dental Horse en tu iPad introduciendo el correo y la contraseña que nos has proporcionado';
 } elseif ($var_idiom == 'en'){
-    $redirect_url_text = 'Zurück zum Anmeldeformular';
-    $response_form = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es zu einem späteren Zeitpunkt noch einmal.';
-    $register_ok = 'Anmeldung war korrekt durchgeführt. Sie können mit Benutzername und Kennwort aus Formular auf App zugreifen.';
-    $come_back = 'Zurück zum Anfang';
-    $user_exist = 'Dieser Benutzername ist bereits in unserer Datenbank vorhanden.';
+    $redirect_url_text = 'Comeback to form';
+    $response_form = 'Has an error occurred while processing the request, please try again.';
+    $register_ok = 'The registration was successful. You can now access your application with the user and password you submitted on the form';
+    $come_back = 'Comeback to home';
+    $user_exist = 'The user already exists in our database.';
     $use_our_app = 'Now you can access Dental Horse on your iPad by entering the email and password you have chosen.';
 }
 
